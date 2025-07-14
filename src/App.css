@@ -72,3 +72,35 @@ body {
 .btn-control.reset {
   background-color: rgb(201, 201, 201);
 }
+
+.message-box {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+.list {
+  border: 2px solid rgb(232, 255, 23);
+}
+
+.reward-heading {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.list-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: white;
+  border: 2px solid black;
+  padding: 2rem;
+  list-style: none;
+  font-size: 1.2rem;
+}
+
+.list-item-element {
+  padding: 2rem;
+  border: 1px solid black;
+  border-radius: 10px;
+}
