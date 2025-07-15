@@ -1,0 +1,20 @@
+[
+  {
+    "image": "assets/film-spool.svg",
+    "description": "Watch a movie",
+    "category": "reward",
+    "price": 6
+  },
+  {
+    "image": "assets/pizza-slice.svg",
+    "description": "Eat a pizza",
+    "category": "reward",
+    "price": 10
+  },
+  {
+    "image": "assets/gamepad.svg",
+    "description": "Play a game for 30 minutes",
+    "category": "reward",
+    "price": 15
+  }
+]

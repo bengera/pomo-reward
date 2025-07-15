@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import data from "./data.json";
 import "./App.css";
 
 function App() {
-  const [timeLeft, setTimeLeft] = useState(1500);
+  const [rewards, setRewards] = useState(data);
+  const [timeLeft, setTimeLeft] = useState(10);
   const [timerRunning, setTimerRunning] = useState(false);
 
   function Reset() {
@@ -35,7 +37,7 @@ function App() {
           timerRunning={timerRunning}
         ></Timer>
       </Main>
-      <RewardList />
+      {timerRunning && timeLeft === 0 ? <RewardList rewards={rewards} /> : null}
     </>
   );
 }
@@ -68,23 +70,35 @@ function Timer({ timeLeft, timerRunning, setTimerRunning, Reset }) {
         </button>
       </div>
       <div className="message-box">
-        <p className="message-box__message">
-          {timerRunning ? "Stay focused" : "Timer paused"}
-        </p>
+        {timeLeft !== 0 ? (
+          <p className="message-box__message">
+            {timerRunning ? "Stay focused" : "Timer paused"}
+          </p>
+        ) : (
+          <p className="message-box__message">You did it!</p>
+        )}
       </div>
     </>
   );
 }
 
-function RewardList() {
+function RewardList({ rewards }) {
   return (
     <div className="list">
       <h2 className="reward-heading">Choose a Reward</h2>
-      <ul className="list-items">
-        <li className="list-item-element">Watch a movie</li>
-        <li className="list-item-element">Play a game for two hours</li>
-        <li className="list-item-element">Order a drink</li>
-      </ul>
+      {rewards.map((item) => (
+        <div className="reward-block">
+          <p className="reward-text">{item.description}</p>
+          <div className="left-content">
+            <img
+              className="reward-img"
+              src={item.image}
+              alt={item.description}
+            />
+            <button className="btn-claim">Claim</button>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
