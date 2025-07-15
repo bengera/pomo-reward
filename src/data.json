@@ -1,17 +1,20 @@
 [
   {
+    "id": "e1f6a0b1-8c3d-4c02-b14e-d76b60b6d0d1",
     "image": "assets/film-spool.svg",
     "description": "Watch a movie",
     "category": "reward",
     "price": 6
   },
   {
+    "id": "2b735229-929c-4782-9c16-e3db8e51f1dc",
     "image": "assets/pizza-slice.svg",
     "description": "Eat a pizza",
     "category": "reward",
     "price": 10
   },
   {
+    "id": "09ef50fa-9c1f-4866-ae76-23074f122ec9",
     "image": "assets/gamepad.svg",
     "description": "Play a game for 30 minutes",
     "category": "reward",

@@ -4,13 +4,13 @@ import "./App.css";
 
 function App() {
   const [rewards, setRewards] = useState(data);
-  const [timeLeft, setTimeLeft] = useState(10);
+  const [timeLeft, setTimeLeft] = useState(5);
   const [timerRunning, setTimerRunning] = useState(false);
 
   function Reset() {
     console.log("Resetting Timer");
     setTimerRunning(false);
-    setTimeLeft(1500);
+    setTimeLeft(5);
   }
 
   useEffect(
@@ -87,7 +87,7 @@ function RewardList({ rewards }) {
     <div className="list">
       <h2 className="reward-heading">Choose a Reward</h2>
       {rewards.map((item) => (
-        <div className="reward-block">
+        <div className="reward-block" key={item.id}>
           <p className="reward-text">{item.description}</p>
           <div className="left-content">
             <img
