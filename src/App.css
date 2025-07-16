@@ -67,6 +67,11 @@ body {
 }
 /*TIME BUTTONS END*/
 
+.times-container {
+  grid-row: 1 / 1;
+  grid-column: 2 / 2;
+}
+
 .timer-count {
   font-size: 8rem;
   text-align: center;
@@ -81,23 +86,24 @@ body {
 }
 
 .btn-control {
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
   border: 0;
+  border-radius: 10px;
   cursor: pointer;
   color: white;
   font-size: 2rem;
 }
 
 .btn-control.start {
-  background-color: rgb(38, 171, 38);
+  background-color: rgb(34, 197, 94);
 }
 
 .btn-control.stop {
-  background-color: rgb(218, 44, 32);
+  background-color: rgb(220, 38, 38);
 }
 
 .btn-control.reset {
-  background-color: rgb(201, 201, 201);
+  background-color: rgb(163, 163, 163);
 }
 
 .message-box {

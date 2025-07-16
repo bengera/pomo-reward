@@ -50,6 +50,7 @@ function App() {
   function ChooseTimes() {
     function setChosenTime(time) {
       console.log(time);
+      setlastTime(time);
       const [minutes, seconds] = time.split(":").map(Number);
       const total = minutes * 60 + seconds;
       setTimeLeft(total);
