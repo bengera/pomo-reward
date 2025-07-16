@@ -9,6 +9,7 @@ function App() {
   const [rewards, setRewards] = useState(data);
   const [timeLeft, setTimeLeft] = useState(1);
   const [timerRunning, setTimerRunning] = useState(false);
+  const [resetTime, setResetTime] = useState(0);
 
   function Main({ children }) {
     return <main className="main">{children}</main>;
@@ -17,7 +18,7 @@ function App() {
   function Reset() {
     console.log("Resetting Timer");
     setTimerRunning(false);
-    setTimeLeft(1500);
+    setTimeLeft(resetTime);
   }
 
   useEffect(
@@ -45,7 +46,7 @@ function App() {
         ></Timer>
       </Main>
       {timerRunning && timeLeft === 0 ? <RewardList rewards={rewards} /> : null}
-      <ChooseTimes setTimeLeft={setTimeLeft} />
+      <ChooseTimes setTimeLeft={setTimeLeft} setResetTime={setResetTime} />
     </div>
   );
 }
