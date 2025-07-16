@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import data from "./data.json";
+import { RewardList } from "./components/RewardList";
 import "./App.css";
 
 function App() {
   const [rewards, setRewards] = useState(data);
-  const [timeLeft, setTimeLeft] = useState(1500);
+  const [timeLeft, setTimeLeft] = useState(1);
   const [timerRunning, setTimerRunning] = useState(false);
 
   function Main({ children }) {
@@ -104,27 +105,6 @@ function App() {
       </Main>
       {timerRunning && timeLeft === 0 ? <RewardList rewards={rewards} /> : null}
       <ChooseTimes />
-    </div>
-  );
-}
-
-function RewardList({ rewards }) {
-  return (
-    <div className="list">
-      <h2 className="reward-heading">Choose a Reward</h2>
-      {rewards.map((item) => (
-        <div className="reward-block" key={item.id}>
-          <p className="reward-text">{item.description}</p>
-          <div className="left-content">
-            <img
-              className="reward-img"
-              src={item.image}
-              alt={item.description}
-            />
-            <button className="btn-claim">Claim</button>
-          </div>
-        </div>
-      ))}
     </div>
   );
 }
