@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import data from "./data.json";
 import { RewardList } from "./components/RewardList";
+import { ChooseTimes } from "./components/ChooseTimes";
 import "./App.css";
 
 function App() {
@@ -48,31 +49,6 @@ function App() {
     );
   }
 
-  function ChooseTimes() {
-    function setChosenTime(time) {
-      console.log(time);
-
-      const [minutes, seconds] = time.split(":").map(Number);
-      const total = minutes * 60 + seconds;
-      setTimeLeft(total);
-    }
-    const times = ["5:00", "10:00", "15:00", "25:00", "30:00", "60:00"];
-
-    return (
-      <div className="times-container">
-        {times.map((time) => (
-          <button
-            className="time-btn"
-            onClick={() => setChosenTime(time)}
-            key={time}
-          >
-            {time}
-          </button>
-        ))}
-      </div>
-    );
-  }
-
   function Reset() {
     console.log("Resetting Timer");
     setTimerRunning(false);
@@ -104,7 +80,7 @@ function App() {
         ></Timer>
       </Main>
       {timerRunning && timeLeft === 0 ? <RewardList rewards={rewards} /> : null}
-      <ChooseTimes />
+      <ChooseTimes setTimeLeft={setTimeLeft} />
     </div>
   );
 }
