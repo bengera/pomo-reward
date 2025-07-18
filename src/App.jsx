@@ -28,6 +28,15 @@ function App() {
 
   useEffect(
     function () {
+      if (timeLeft === 0 && timerRunning) {
+        setCounter((count) => count + 1);
+      }
+    },
+    [timeLeft, timerRunning]
+  );
+
+  useEffect(
+    function () {
       if (!timerRunning || timeLeft === 0) return;
       const interval = setInterval(() => {
         setTimeLeft((prev) => prev - 1);
