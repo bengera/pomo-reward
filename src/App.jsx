@@ -17,7 +17,12 @@ function App() {
   }
 
   function PomoCounter() {
-    return <p className="counter">{"⭐".repeat(counter)}</p>;
+    return (
+      <div className="pomo-counter">
+        <h2>Pomdoros Completed</h2>
+        <p className="counter">{"⭐".repeat(counter)}</p>
+      </div>
+    );
   }
 
   function Reset() {
