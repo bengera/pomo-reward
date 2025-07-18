@@ -10,9 +10,14 @@ function App() {
   const [timeLeft, setTimeLeft] = useState(1);
   const [timerRunning, setTimerRunning] = useState(false);
   const [resetTime, setResetTime] = useState(0);
+  const [counter, setCounter] = useState(0);
 
   function Main({ children }) {
     return <main className="main">{children}</main>;
+  }
+
+  function PomoCounter() {
+    return <p className="counter">{counter}</p>;
   }
 
   function Reset() {
@@ -47,6 +52,7 @@ function App() {
       </Main>
       {timerRunning && timeLeft === 0 ? <RewardList rewards={rewards} /> : null}
       <ChooseTimes setTimeLeft={setTimeLeft} setResetTime={setResetTime} />
+      <PomoCounter />
     </div>
   );
 }
