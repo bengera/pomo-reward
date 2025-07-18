@@ -7,7 +7,7 @@ import "./App.css";
 
 function App() {
   const [rewards, setRewards] = useState(data);
-  const [timeLeft, setTimeLeft] = useState(1);
+  const [timeLeft, setTimeLeft] = useState(0);
   const [timerRunning, setTimerRunning] = useState(false);
   const [resetTime, setResetTime] = useState(0);
   const [counter, setCounter] = useState(0);
@@ -51,10 +51,20 @@ function App() {
         ></Timer>
       </Main>
       {timerRunning && timeLeft === 0 ? <RewardList rewards={rewards} /> : null}
-      <ChooseTimes setTimeLeft={setTimeLeft} setResetTime={setResetTime} />
+      <ChooseTimes
+        setTimeLeft={setTimeLeft}
+        setResetTime={setResetTime}
+        timerRunning={timerRunning}
+        setTimerRunning={setTimerRunning}
+      />
       <PomoCounter />
     </div>
   );
 }
 
 export default App;
+
+// Issue 1 - when timer reaches 0 and new time is selected, counter starts
+// Issue 2 - timer starts automattically when switching times
+
+// - Solution : Dsiable time buttons while timer running

@@ -66,9 +66,13 @@ body {
   border: 2px solid rgb(27, 27, 27);
   background-color: white;
 
-  &:hover {
+  &:not(disabled)hover {
     background-color: rgb(198, 199, 197);
   }
+}
+
+.time-btn:disabled {
+  opacity: 0.5;
 }
 /*TIME BUTTONS END*/
 
