@@ -73,6 +73,7 @@ body {
 
 .time-btn:disabled {
   opacity: 0.5;
+  cursor: not-allowed;
 }
 /*TIME BUTTONS END*/
 

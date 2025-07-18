@@ -19,7 +19,7 @@ export function ChooseTimes({
         <button
           className="time-btn"
           onClick={() => {
-            setTimerRunning(false), setChosenTime(time);
+            setChosenTime(time);
           }}
           key={time}
           disabled={timerRunning}
