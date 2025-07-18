@@ -17,7 +17,7 @@ function App() {
   }
 
   function PomoCounter() {
-    return <p className="counter">{counter}</p>;
+    return <p className="counter">{"⭐".repeat(counter)}</p>;
   }
 
   function Reset() {

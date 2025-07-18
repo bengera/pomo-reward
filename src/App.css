@@ -180,6 +180,6 @@ body {
 .counter {
   grid-column: 3/3;
   grid-row: 1;
-  font-size: 10rem;
+  font-size: 2rem;
   color: black;
 }
