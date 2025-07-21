@@ -92,6 +92,13 @@ body {
   padding-top: 1.5rem;
 }
 
+.amount {
+  grid-column: 2/2;
+  font-size: 2rem;
+  padding: 2rem;
+  border: 2px solid black;
+}
+
 .buttons-container {
   display: flex;
   justify-content: center;

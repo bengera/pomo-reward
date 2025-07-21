@@ -11,6 +11,7 @@ function App() {
   const [timerRunning, setTimerRunning] = useState(false);
   const [resetTime, setResetTime] = useState(0);
   const [counter, setCounter] = useState(0);
+  const [money, setMoney] = useState(0);
 
   function Main({ children }) {
     return <main className="main">{children}</main>;
@@ -25,6 +26,16 @@ function App() {
     );
   }
 
+  function MoneyCounter() {
+    return (
+      <div className="amount">
+        <p className="amount-value">{`You have ${
+          counter > 1 ? `${counter} stars` : `${counter} star`
+        }  and $${money}`}</p>
+      </div>
+    );
+  }
+
   function Reset() {
     console.log("Resetting Timer");
     setTimerRunning(false);
@@ -35,6 +46,7 @@ function App() {
     function () {
       if (timeLeft === 0 && timerRunning) {
         setCounter((count) => count + 1);
+        setMoney((val) => val + 10);
       }
     },
     [timeLeft, timerRunning]
@@ -72,6 +84,7 @@ function App() {
         setTimerRunning={setTimerRunning}
       />
       <PomoCounter />
+      <MoneyCounter />
     </div>
   );
 }
