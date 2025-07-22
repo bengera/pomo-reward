@@ -1,8 +1,10 @@
-export function RewardList({ rewards, setRewards }) {
+export function RewardList({ rewards, setRewards, money, setMoney }) {
   function handleClaim(itemToClaim) {
     console.log(itemToClaim);
     const updatedArr = rewards.filter((item) => item.id !== itemToClaim.id);
+    if (money < itemToClaim.price) return;
     setRewards(updatedArr);
+    setMoney((prev) => prev - itemToClaim.price);
   }
 
   return (
