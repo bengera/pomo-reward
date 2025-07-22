@@ -46,6 +46,7 @@ function App() {
     function () {
       if (timeLeft === 0 && timerRunning) {
         setCounter((count) => count + 1);
+        setTimerRunning(false);
         setMoney((val) => val + 10);
       }
     },
@@ -83,6 +84,7 @@ function App() {
         money={money}
         setMoney={setMoney}
         timerRunning={timerRunning}
+        timeLeft={timeLeft}
       />
 
       <ChooseTimes

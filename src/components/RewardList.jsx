@@ -4,6 +4,7 @@ export function RewardList({
   money,
   setMoney,
   timerRunning,
+  timeLeft,
 }) {
   function handleClaim(itemToClaim) {
     console.log(itemToClaim);
@@ -14,7 +15,7 @@ export function RewardList({
   }
 
   return (
-    <div className={!timerRunning ? "list" : "list-disabled"}>
+    <div className={!timerRunning && timeLeft === 0 ? "list" : "list-disabled"}>
       <h2 className="reward-heading">Choose a Reward</h2>
       {rewards.map((item) => (
         <div className="reward-block" key={item.id}>
