@@ -92,6 +92,12 @@ function App() {
       />
       <PomoCounter />
       <MoneyCounter />
+      <p className="app-description">
+        Welcome to Pomo Reward, this app follows the Pomodoro Technique. Choose
+        an amount of time that you want to focus for, once you have completed
+        your task you will earn money which you can later spend on rewards of
+        your choosing.
+      </p>
     </div>
   );
 }
