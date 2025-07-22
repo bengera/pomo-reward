@@ -76,14 +76,15 @@ function App() {
           timerRunning={timerRunning}
         ></Timer>
       </Main>
-      {timerRunning && timeLeft === 0 ? (
-        <RewardList
-          rewards={rewards}
-          setRewards={setRewards}
-          money={money}
-          setMoney={setMoney}
-        />
-      ) : null}
+
+      <RewardList
+        rewards={rewards}
+        setRewards={setRewards}
+        money={money}
+        setMoney={setMoney}
+        timerRunning={timerRunning}
+      />
+
       <ChooseTimes
         setTimeLeft={setTimeLeft}
         setResetTime={setResetTime}

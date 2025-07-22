@@ -45,7 +45,7 @@ body {
   width: 100%;
   height: 400px;
   background-color: white;
-  border-radius: 10px;
+
   grid-column: 1;
   border: 2px solid rgb(27, 27, 27);
   padding: 1rem;
@@ -140,13 +140,20 @@ body {
   font-size: 1.5rem;
 }
 
-.list {
+.list,
+.list-disabled {
   /* border: 2px solid rgb(232, 255, 23); */
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
   margin-top: 4rem;
   grid-column: 1;
+  padding: 1rem;
+}
+
+.list-disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .reward-heading {

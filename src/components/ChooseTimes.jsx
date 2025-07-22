@@ -6,7 +6,17 @@ export function ChooseTimes({ setTimeLeft, setResetTime, timerRunning }) {
     setResetTime(total);
   }
 
-  const times = ["00:03", "5:00", "10:00", "15:00", "25:00", "30:00", "60:00"];
+  const times = [
+    "00:03",
+    "5:00",
+    "10:00",
+    "15:00",
+    "25:00",
+    "30:00",
+    "60:00",
+    "80:00",
+    "120:00",
+  ];
 
   return (
     <div className="times-container">

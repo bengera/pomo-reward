@@ -1,4 +1,10 @@
-export function RewardList({ rewards, setRewards, money, setMoney }) {
+export function RewardList({
+  rewards,
+  setRewards,
+  money,
+  setMoney,
+  timerRunning,
+}) {
   function handleClaim(itemToClaim) {
     console.log(itemToClaim);
     const updatedArr = rewards.filter((item) => item.id !== itemToClaim.id);
@@ -8,7 +14,7 @@ export function RewardList({ rewards, setRewards, money, setMoney }) {
   }
 
   return (
-    <div className="list">
+    <div className={!timerRunning ? "list" : "list-disabled"}>
       <h2 className="reward-heading">Choose a Reward</h2>
       {rewards.map((item) => (
         <div className="reward-block" key={item.id}>
