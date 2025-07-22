@@ -90,8 +90,3 @@ function App() {
 }
 
 export default App;
-
-// Issue 1 - when timer reaches 0 and new time is selected, counter starts
-// Issue 2 - timer starts automattically when switching times
-
-// - Solution : Dsiable time buttons while timer running

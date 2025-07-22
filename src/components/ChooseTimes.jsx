@@ -1,9 +1,4 @@
-export function ChooseTimes({
-  setTimeLeft,
-  setResetTime,
-  timerRunning,
-  setTimerRunning,
-}) {
+export function ChooseTimes({ setTimeLeft, setResetTime, timerRunning }) {
   function setChosenTime(time) {
     const [minutes, seconds] = time.split(":").map(Number);
     const total = minutes * 60 + seconds;

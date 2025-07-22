@@ -6,12 +6,10 @@ export function RewardList({ rewards }) {
         <div className="reward-block" key={item.id}>
           <p className="reward-text">{item.description}</p>
           <div className="left-content">
-            <img
-              className="reward-img"
-              src={item.image}
-              alt={item.description}
-            />
-            <button className="btn-claim">Claim</button>
+            <div className="right-content">
+              <p className="reward-cost">${item.price.toFixed(2)}</p>
+              <button className="btn-claim">Claim</button>
+            </div>
           </div>
         </div>
       ))}
