@@ -1,4 +1,10 @@
-export function RewardList({ rewards }) {
+export function RewardList({ rewards, setRewards }) {
+  function handleClaim(itemToClaim) {
+    console.log(itemToClaim);
+    const updatedArr = rewards.filter((item) => item.id !== itemToClaim.id);
+    setRewards(updatedArr);
+  }
+
   return (
     <div className="list">
       <h2 className="reward-heading">Choose a Reward</h2>
@@ -8,7 +14,9 @@ export function RewardList({ rewards }) {
           <div className="left-content">
             <div className="right-content">
               <p className="reward-cost">${item.price.toFixed(2)}</p>
-              <button className="btn-claim">Claim</button>
+              <button className="btn-claim" onClick={() => handleClaim(item)}>
+                Claim
+              </button>
             </div>
           </div>
         </div>

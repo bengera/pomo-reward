@@ -76,7 +76,9 @@ function App() {
           timerRunning={timerRunning}
         ></Timer>
       </Main>
-      {timerRunning && timeLeft === 0 ? <RewardList rewards={rewards} /> : null}
+      {timerRunning && timeLeft === 0 ? (
+        <RewardList rewards={rewards} setRewards={setRewards} />
+      ) : null}
       <ChooseTimes
         setTimeLeft={setTimeLeft}
         setResetTime={setResetTime}
