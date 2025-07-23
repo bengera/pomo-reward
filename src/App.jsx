@@ -47,6 +47,7 @@ function App() {
       if (timeLeft === 0 && timerRunning) {
         setCounter((count) => count + 1);
         setTimerRunning(false);
+        if (money >= 100) return;
         setMoney((val) => val + 10);
       }
     },
