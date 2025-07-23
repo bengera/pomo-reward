@@ -36,7 +36,7 @@ function App() {
             style={{
               width: `${money}%`,
               backgroundColor:
-                money === 0 ? "transparent" : "rgb(116, 194, 92)",
+                money === 0 ? "transparent" : "rgb(51, 204, 21);",
             }}
           >
             {money}%
