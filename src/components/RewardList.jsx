@@ -32,6 +32,24 @@ export function RewardList({
           </div>
         </div>
       ))}
+      <form className="form">
+        <input type="text" placeholder="Enter reward" />
+        <select name="cost" id="cost-dropdown">
+          <option value="5" className="value">
+            5
+          </option>
+          <option value="10" className="value">
+            10
+          </option>
+          <option value="15" className="value">
+            15
+          </option>
+          <option value="20" className="value">
+            20
+          </option>
+        </select>
+        <button>Add</button>
+      </form>
     </div>
   );
 }
