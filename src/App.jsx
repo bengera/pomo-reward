@@ -35,8 +35,7 @@ function App() {
             className="money"
             style={{
               width: `${money}%`,
-              backgroundColor:
-                money === 0 ? "transparent" : "rgb(51, 204, 21);",
+              backgroundColor: money === 0 ? "transparent" : "rgb(51, 204, 21)",
             }}
           >
             {money}%
@@ -58,10 +57,14 @@ function App() {
         setCounter((count) => count + 1);
         setTimerRunning(false);
         if (money >= 100) return;
-        setMoney((val) => val + 10);
+        const ratePerSecond = 10 / 3600; // $10 per 3600 seconds - one hour
+        const calcMoneyEarned = resetTime * ratePerSecond;
+        const roundMoney = Math.round(calcMoneyEarned * 100) / 100;
+        console.log(roundMoney);
+        setMoney((val) => val + roundMoney);
       }
     },
-    [timeLeft, timerRunning, money]
+    [timeLeft, timerRunning, money, resetTime]
   );
 
   useEffect(
@@ -69,7 +72,7 @@ function App() {
       if (!timerRunning || timeLeft === 0) return;
       const interval = setInterval(() => {
         setTimeLeft((prev) => prev - 1);
-      }, 1000);
+      }, 0.3);
 
       return function () {
         clearInterval(interval);
