@@ -29,9 +29,19 @@ function App() {
   function MoneyCounter() {
     return (
       <div className="amount">
-        <p className="amount-value">{`You have ${
-          counter > 1 ? `${counter} stars` : `${counter} star`
-        }  and $${money}`}</p>
+        <p className="amount-value">{`$${money}`}</p>
+        <div className="progress-bar">
+          <div
+            className="money"
+            style={{
+              width: `${money}%`,
+              backgroundColor:
+                money === 0 ? "transparent" : "rgb(116, 194, 92)",
+            }}
+          >
+            {money}%
+          </div>
+        </div>
       </div>
     );
   }
@@ -51,7 +61,7 @@ function App() {
         setMoney((val) => val + 10);
       }
     },
-    [timeLeft, timerRunning]
+    [timeLeft, timerRunning, money]
   );
 
   useEffect(
@@ -65,7 +75,7 @@ function App() {
         clearInterval(interval);
       };
     },
-    [timerRunning, timeLeft]
+    [timeLeft, timerRunning]
   );
 
   return (
