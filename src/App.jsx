@@ -58,10 +58,10 @@ function App() {
         setTimerRunning(false);
         if (money >= 100) return;
         const ratePerSecond = 10 / 3600; // $10 per 3600 seconds - one hour
-        const calcMoneyEarned = resetTime * ratePerSecond;
-        const roundMoney = Math.round(calcMoneyEarned * 100) / 100;
-        console.log(roundMoney);
-        setMoney((val) => val + roundMoney);
+        const calcMoneyEarned = Math.round(resetTime * ratePerSecond); //chosen time x rate
+        // const roundMoney = Math.round(calcMoneyEarned * 100) / 100; // precision with decimals
+        console.log(calcMoneyEarned);
+        setMoney((val) => val + calcMoneyEarned);
       }
     },
     [timeLeft, timerRunning, money, resetTime]
@@ -72,7 +72,7 @@ function App() {
       if (!timerRunning || timeLeft === 0) return;
       const interval = setInterval(() => {
         setTimeLeft((prev) => prev - 1);
-      }, 0.3);
+      }, 1000);
 
       return function () {
         clearInterval(interval);
