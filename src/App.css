@@ -100,7 +100,7 @@ body {
 }
 
 .progress-bar {
-  width: 80%;
+  width: 100%;
   background-color: rgb(192, 192, 192);
   border-radius: 15px;
 }
@@ -112,10 +112,6 @@ body {
   text-align: right;
   font-size: 20px;
   border-radius: 15px;
-}
-
-.money.zero {
-  background-color: transparent;
 }
 
 .buttons-container {

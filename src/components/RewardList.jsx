@@ -16,7 +16,9 @@ export function RewardList({
 
   return (
     <div className={!timerRunning && timeLeft === 0 ? "list" : "list-disabled"}>
-      <h2 className="reward-heading">Choose a Reward</h2>
+      <h2 className="reward-heading">
+        {rewards.length > 0 ? "Choose a Reward" : "Add some rewards"}
+      </h2>
       {rewards.map((item) => (
         <div className="reward-block" key={item.id}>
           <p className="reward-text">{item.description}</p>
