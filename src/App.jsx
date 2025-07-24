@@ -8,6 +8,7 @@ import { MoneyCounter } from "./components/MoneyCounter";
 import "./App.css";
 
 function App() {
+  const [overlay, setOverlay] = useState(false);
   const [rewards, setRewards] = useState(data);
   const [timeLeft, setTimeLeft] = useState(0);
   const [timerRunning, setTimerRunning] = useState(false);
@@ -34,7 +35,6 @@ function App() {
         const ratePerSecond = 10 / 3600; // $10 per 3600 seconds - one hour
         const calcMoneyEarned = resetTime * ratePerSecond;
         const roundMoney = Math.round(calcMoneyEarned * 100) / 100;
-        console.log(roundMoney);
         setMoney((val) => val + roundMoney);
       }
     },
@@ -56,40 +56,44 @@ function App() {
   );
 
   return (
-    <div className="master-container">
-      <Main>
-        <Timer
-          timeLeft={timeLeft}
-          setTimerRunning={setTimerRunning}
-          Reset={Reset}
+    <>
+      <div className={overlay === true ? "overlay show" : "overlay"}></div>
+      <div className="master-container">
+        <Main>
+          <Timer
+            timeLeft={timeLeft}
+            setTimerRunning={setTimerRunning}
+            Reset={Reset}
+            timerRunning={timerRunning}
+          ></Timer>
+        </Main>
+
+        <RewardList
+          rewards={rewards}
+          setRewards={setRewards}
+          money={money}
+          setMoney={setMoney}
           timerRunning={timerRunning}
-        ></Timer>
-      </Main>
+          timeLeft={timeLeft}
+          setOverlay={setOverlay}
+        />
 
-      <RewardList
-        rewards={rewards}
-        setRewards={setRewards}
-        money={money}
-        setMoney={setMoney}
-        timerRunning={timerRunning}
-        timeLeft={timeLeft}
-      />
-
-      <ChooseTimes
-        setTimeLeft={setTimeLeft}
-        setResetTime={setResetTime}
-        timerRunning={timerRunning}
-        setTimerRunning={setTimerRunning}
-      />
-      <PomoCounter counter={counter} />
-      <MoneyCounter money={money} />
-      <p className="app-description">
-        Welcome to Pomo Reward, this app follows the Pomodoro Technique. Choose
-        an amount of time that you want to focus for, once you have completed
-        your task you will earn money which you can later spend on rewards of
-        your choosing.
-      </p>
-    </div>
+        <ChooseTimes
+          setTimeLeft={setTimeLeft}
+          setResetTime={setResetTime}
+          timerRunning={timerRunning}
+          setTimerRunning={setTimerRunning}
+        />
+        <PomoCounter counter={counter} />
+        <MoneyCounter money={money} />
+        <p className="app-description">
+          Welcome to Pomo Reward, this app follows the Pomodoro Technique.
+          Choose an amount of time that you want to focus for, once you have
+          completed your task you will earn money which you can later spend on
+          rewards of your choosing.
+        </p>
+      </div>
+    </>
   );
 }
 
