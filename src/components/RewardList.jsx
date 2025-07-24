@@ -31,8 +31,6 @@ export function RewardList({
     setOverlay(true);
     setCurrentClaim(itemToClaim);
     const updatedArr = rewards.filter((item) => item.id !== itemToClaim.id);
-    console.log(updatedArr);
-
     setRewards(updatedArr);
     setMoney((prev) => prev - itemToClaim.price);
   }

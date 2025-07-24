@@ -30,9 +30,13 @@ function App() {
   function Modal() {
     return (
       <div className="modal-box">
-        <p>{currentClaim.description}</p>
+        <h2 className="modal-congrats">
+          Congratulations, enjoy your guilt free reward!
+        </h2>
+        <img className="modal-trophy" src="trophy.svg" alt="trophy" />
+        <p className="modal-title">{currentClaim.description}</p>
         <button className="btn-modal-close" onClick={() => setOverlay(false)}>
-          Close modal
+          Close
         </button>
       </div>
     );

@@ -289,9 +289,27 @@ body {
   border: 0;
   width: 592px;
   border-radius: 10px;
+  text-align: center;
+}
+
+.modal-title {
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.modal-trophy {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.modal-congrats {
+  font-size: 1rem;
 }
 
 .btn-modal-close {
-  padding: 1rem;
+  margin-top: 1rem;
+  padding: 1rem 2.5rem;
   cursor: pointer;
+  background-color: transparent;
+  border-radius: 10px;
 }
