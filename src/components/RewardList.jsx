@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export function RewardList({
   rewards,
   setRewards,
@@ -6,6 +8,22 @@ export function RewardList({
   timerRunning,
   timeLeft,
 }) {
+  const [newReward, setNewReward] = useState("");
+  const [amount, setAmount] = useState("5");
+
+  function addNewReward(e) {
+    e.preventDefault();
+    console.log("Adding new reward item to list");
+    const newItem = {
+      id: Date.now(),
+      description: newReward,
+      category: "reward",
+      price: Number(amount),
+    };
+    setRewards((prev) => [...prev, newItem]);
+    setNewReward("");
+  }
+
   function handleClaim(itemToClaim) {
     console.log(itemToClaim);
     const updatedArr = rewards.filter((item) => item.id !== itemToClaim.id);
@@ -32,20 +50,30 @@ export function RewardList({
           </div>
         </div>
       ))}
-      <form className="form">
-        <input type="text" placeholder="Enter reward" />
-        <select name="cost" id="cost-dropdown">
+      <form className="form" onSubmit={addNewReward}>
+        <input
+          type="text"
+          placeholder="Enter reward"
+          value={newReward}
+          onChange={(e) => setNewReward(e.target.value)}
+        />
+        <select
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+          name="cost"
+          id="cost-dropdown"
+        >
           <option value="5" className="value">
-            5
+            $5.00
           </option>
           <option value="10" className="value">
-            10
+            $10.00
           </option>
           <option value="15" className="value">
-            15
+            $15.00
           </option>
           <option value="20" className="value">
-            20
+            $20.00
           </option>
         </select>
         <button>Add</button>
