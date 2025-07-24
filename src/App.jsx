@@ -3,6 +3,8 @@ import data from "./data.json";
 import { Timer } from "./components/Timer";
 import { RewardList } from "./components/RewardList";
 import { ChooseTimes } from "./components/ChooseTimes";
+import { PomoCounter } from "./components/PomoCounter";
+import { MoneyCounter } from "./components/MoneyCounter";
 import "./App.css";
 
 function App() {
@@ -15,34 +17,6 @@ function App() {
 
   function Main({ children }) {
     return <main className="main">{children}</main>;
-  }
-
-  function PomoCounter() {
-    return (
-      <div className="pomo-counter">
-        <h2>Pomdoros Completed</h2>
-        <p className="counter">{"⭐".repeat(counter)}</p>
-      </div>
-    );
-  }
-
-  function MoneyCounter() {
-    return (
-      <div className="amount">
-        <p className="amount-value">{`$${money}`}</p>
-        <div className="progress-bar">
-          <div
-            className="money"
-            style={{
-              width: `${money}%`,
-              backgroundColor: money === 0 ? "transparent" : "rgb(51, 204, 21)",
-            }}
-          >
-            {money}%
-          </div>
-        </div>
-      </div>
-    );
   }
 
   function Reset() {
@@ -107,8 +81,8 @@ function App() {
         timerRunning={timerRunning}
         setTimerRunning={setTimerRunning}
       />
-      <PomoCounter />
-      <MoneyCounter />
+      <PomoCounter counter={counter} />
+      <MoneyCounter money={money} />
       <p className="app-description">
         Welcome to Pomo Reward, this app follows the Pomodoro Technique. Choose
         an amount of time that you want to focus for, once you have completed
