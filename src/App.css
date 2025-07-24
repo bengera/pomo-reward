@@ -68,7 +68,7 @@ body {
   height: 72px;
   width: 177px;
 
-  &:not(disabled)hover {
+  &:not(:disabled):hover {
     background-color: rgb(198, 199, 197);
   }
 }
@@ -210,6 +210,11 @@ body {
   color: rgb(36, 30, 30);
   /* border: 1px solid rgb(50, 207, 84); */
   /* border-radius: 10px; */
+}
+
+.btn-delete {
+  padding: 1rem;
+  cursor: pointer;
 }
 
 .reward-text {

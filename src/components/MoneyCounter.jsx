@@ -1,7 +1,7 @@
 export function MoneyCounter({ money }) {
   return (
     <div className="amount">
-      <p className="amount-value">{`$${money}`}</p>
+      <p className="amount-value">{`You have earned $${money} of $100`}</p>
       <div className="progress-bar">
         <div
           className="money"

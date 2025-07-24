@@ -13,7 +13,7 @@ export function RewardList({
 
   function addNewReward(e) {
     e.preventDefault();
-    console.log("Adding new reward item to list");
+
     const newItem = {
       id: Date.now(),
       description: newReward,
@@ -32,6 +32,13 @@ export function RewardList({
     setMoney((prev) => prev - itemToClaim.price);
   }
 
+  function handleDelete(itemToRemove) {
+    const updatedArr = rewards.filter(
+      (rewardItem) => rewardItem.id !== itemToRemove.id
+    );
+    setRewards(updatedArr);
+  }
+
   return (
     <div className={!timerRunning && timeLeft === 0 ? "list" : "list-disabled"}>
       <h2 className="reward-heading">
@@ -45,6 +52,9 @@ export function RewardList({
               <p className="reward-cost">${item.price.toFixed(2)}</p>
               <button className="btn-claim" onClick={() => handleClaim(item)}>
                 Claim
+              </button>
+              <button className="btn-delete" onClick={() => handleDelete(item)}>
+                X
               </button>
             </div>
           </div>
