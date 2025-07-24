@@ -8,13 +8,14 @@ import { MoneyCounter } from "./components/MoneyCounter";
 import "./App.css";
 
 function App() {
-  const [overlay, setOverlay] = useState(false);
+  const [overlay, setOverlay] = useState(true);
   const [rewards, setRewards] = useState(data);
   const [timeLeft, setTimeLeft] = useState(0);
   const [timerRunning, setTimerRunning] = useState(false);
   const [resetTime, setResetTime] = useState(0);
   const [counter, setCounter] = useState(0);
   const [money, setMoney] = useState(0);
+  const [currentClaim, setCurrentClaim] = useState("");
 
   function Main({ children }) {
     return <main className="main">{children}</main>;
@@ -24,6 +25,17 @@ function App() {
     console.log("Resetting Timer");
     setTimerRunning(false);
     setTimeLeft(resetTime);
+  }
+
+  function Modal() {
+    return (
+      <div className="modal-box">
+        <p>{currentClaim.description}</p>
+        <button className="btn-modal-close" onClick={() => setOverlay(false)}>
+          Close modal
+        </button>
+      </div>
+    );
   }
 
   useEffect(
@@ -76,6 +88,7 @@ function App() {
           timerRunning={timerRunning}
           timeLeft={timeLeft}
           setOverlay={setOverlay}
+          setCurrentClaim={setCurrentClaim}
         />
 
         <ChooseTimes
@@ -92,6 +105,7 @@ function App() {
           completed your task you will earn money which you can later spend on
           rewards of your choosing.
         </p>
+        {overlay === true ? <Modal /> : null}
       </div>
     </>
   );
