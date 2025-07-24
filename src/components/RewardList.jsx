@@ -15,6 +15,7 @@ export function RewardList({
 
   function addNewReward(e) {
     e.preventDefault();
+    if (!newReward.trim()) return;
 
     const newItem = {
       id: Date.now(),
