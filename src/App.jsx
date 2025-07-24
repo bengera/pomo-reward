@@ -8,7 +8,7 @@ import { MoneyCounter } from "./components/MoneyCounter";
 import "./App.css";
 
 function App() {
-  const [overlay, setOverlay] = useState(true);
+  const [overlay, setOverlay] = useState(false);
   const [rewards, setRewards] = useState(data);
   const [timeLeft, setTimeLeft] = useState(0);
   const [timerRunning, setTimerRunning] = useState(false);
