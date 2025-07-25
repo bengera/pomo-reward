@@ -14,10 +14,10 @@ function App() {
   const [timeLeft, setTimeLeft] = useState(0);
   const [timerRunning, setTimerRunning] = useState(false);
   const [resetTime, setResetTime] = useState(0);
-  const [counter, setCounter] = useState();
+  const [counter, setCounter] = useState(0);
   const [money, setMoney] = useState(100);
   const [currentClaim, setCurrentClaim] = useState("");
-  const [quotes] = useState(quotations);
+  const [allQuotes] = useState(quotations);
   const [selectedQuote, setSelectedQuote] = useState("");
 
   function Main({ children }) {
@@ -33,7 +33,8 @@ function App() {
   function Modal() {
     return (
       <div className="modal-box">
-        <h2 className="modal-congrats">{selectedQuote}</h2>
+        <h2 className="modal-congrats">{selectedQuote.quote}</h2>
+        <small>{selectedQuote.author}</small>
         <img className="modal-trophy" src="trophy.svg" alt="trophy" />
         <p className="modal-title">{currentClaim.description}</p>
         <button className="btn-modal-close" onClick={() => setOverlay(false)}>
@@ -94,7 +95,7 @@ function App() {
           timeLeft={timeLeft}
           setOverlay={setOverlay}
           setCurrentClaim={setCurrentClaim}
-          quotes={quotes}
+          allQuotes={allQuotes}
           setSelectedQuote={setSelectedQuote}
         />
 

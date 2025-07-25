@@ -9,7 +9,7 @@ export function RewardList({
   timeLeft,
   setOverlay,
   setCurrentClaim,
-  quotes,
+  allQuotes,
 
   setSelectedQuote,
 }) {
@@ -37,10 +37,10 @@ export function RewardList({
     const updatedArr = rewards.filter((item) => item.id !== itemToClaim.id);
     setRewards(updatedArr);
     setMoney((prev) => prev - itemToClaim.price);
-    const randomQuote = Math.floor(Math.random() * 4);
+    const randomQuote = Math.floor(Math.random() * allQuotes.length);
     console.log(randomQuote);
 
-    setSelectedQuote(quotes[randomQuote].quote);
+    setSelectedQuote(allQuotes[randomQuote]);
   }
 
   function handleDelete(itemToRemove) {
