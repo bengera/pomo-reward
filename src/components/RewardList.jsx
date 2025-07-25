@@ -9,6 +9,9 @@ export function RewardList({
   timeLeft,
   setOverlay,
   setCurrentClaim,
+  quotes,
+
+  setSelectedQuote,
 }) {
   const [newReward, setNewReward] = useState("");
   const [amount, setAmount] = useState("5");
@@ -34,6 +37,10 @@ export function RewardList({
     const updatedArr = rewards.filter((item) => item.id !== itemToClaim.id);
     setRewards(updatedArr);
     setMoney((prev) => prev - itemToClaim.price);
+    const randomQuote = Math.floor(Math.random() * 4);
+    console.log(randomQuote);
+
+    setSelectedQuote(quotes[randomQuote].quote);
   }
 
   function handleDelete(itemToRemove) {

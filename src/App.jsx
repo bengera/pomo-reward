@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import data from "./data.json";
+import quotations from "./quotes.json";
 import { Timer } from "./components/Timer";
 import { RewardList } from "./components/RewardList";
 import { ChooseTimes } from "./components/ChooseTimes";
@@ -13,9 +14,11 @@ function App() {
   const [timeLeft, setTimeLeft] = useState(0);
   const [timerRunning, setTimerRunning] = useState(false);
   const [resetTime, setResetTime] = useState(0);
-  const [counter, setCounter] = useState(0);
-  const [money, setMoney] = useState(0);
+  const [counter, setCounter] = useState();
+  const [money, setMoney] = useState(100);
   const [currentClaim, setCurrentClaim] = useState("");
+  const [quotes] = useState(quotations);
+  const [selectedQuote, setSelectedQuote] = useState("");
 
   function Main({ children }) {
     return <main className="main">{children}</main>;
@@ -30,9 +33,7 @@ function App() {
   function Modal() {
     return (
       <div className="modal-box">
-        <h2 className="modal-congrats">
-          Congratulations, enjoy your guilt free reward!
-        </h2>
+        <h2 className="modal-congrats">{selectedQuote}</h2>
         <img className="modal-trophy" src="trophy.svg" alt="trophy" />
         <p className="modal-title">{currentClaim.description}</p>
         <button className="btn-modal-close" onClick={() => setOverlay(false)}>
@@ -93,6 +94,8 @@ function App() {
           timeLeft={timeLeft}
           setOverlay={setOverlay}
           setCurrentClaim={setCurrentClaim}
+          quotes={quotes}
+          setSelectedQuote={setSelectedQuote}
         />
 
         <ChooseTimes
