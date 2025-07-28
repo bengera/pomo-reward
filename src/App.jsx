@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import Lottie from "lottie-react";
+import animationData from "./success.json";
+import "./App.css";
 import data from "./data.json";
 import quotations from "./quotes.json";
 import { Timer } from "./components/Timer";
@@ -6,7 +9,6 @@ import { RewardList } from "./components/RewardList";
 import { ChooseTimes } from "./components/ChooseTimes";
 import { PomoCounter } from "./components/PomoCounter";
 import { MoneyCounter } from "./components/MoneyCounter";
-import "./App.css";
 
 function App() {
   const [overlay, setOverlay] = useState(false);
@@ -33,10 +35,16 @@ function App() {
   function Modal() {
     return (
       <div className="modal-box">
-        <h2 className="modal-congrats">{selectedQuote.quote}</h2>
-        <small>{selectedQuote.author}</small>
-        <img className="modal-trophy" src="trophy.svg" alt="trophy" />
         <p className="modal-title">{currentClaim.description}</p>
+        <Lottie
+          animationData={animationData}
+          loop={false}
+          autoplay={true}
+          style={{ width: 400, height: 400 }}
+        />
+        <h2 className="modal-congrats">"{selectedQuote.quote}"</h2>
+        <small>{selectedQuote.author}</small>
+
         <button className="btn-modal-close" onClick={() => setOverlay(false)}>
           Close
         </button>
