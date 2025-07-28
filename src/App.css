@@ -235,6 +235,8 @@ body {
   font-size: 2rem;
   color: black;
   border: 2px solid black;
+  max-width: 75ch;
+  word-break: break-word;
 }
 
 .app-description {
@@ -288,7 +290,7 @@ body {
   padding: 2rem;
   left: 50%;
   transform: translate(-50%, 0);
-  top: 10%;
+  top: 5%;
   background-color: white;
   border: 0;
   width: 592px;
