@@ -10,7 +10,6 @@ export function RewardList({
   setOverlay,
   setCurrentClaim,
   allQuotes,
-
   setSelectedQuote,
 }) {
   const [newReward, setNewReward] = useState("");

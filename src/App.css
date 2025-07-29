@@ -1,6 +1,13 @@
 :root {
-  --clr-background: rgb(223, 73, 73);
-  --clr-primary: #ffffffea;
+  --bg-light: #fff8e6;
+  --bg-section: #fdf0d1;
+  --text-heading: #2e1f11;
+  --text-body: #5b4632;
+  --accent-gold: #d6a84a;
+  --accent-gold-light: #ebcb72;
+  --button-active: #e4bd71;
+  --icon-gold: #c7a156;
+  --border-light: #f0e3c1;
 }
 
 *,
@@ -25,7 +32,8 @@ svg {
 }
 
 body {
-  background-color: var(--clr-primary);
+  background-color: var(--bg-light);
+  color: var(--text-body);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,9 +54,9 @@ body {
   width: 100%;
   height: 400px;
   background-color: white;
+  grid-column: 2/2;
 
-  grid-column: 1;
-  border: 2px solid rgb(27, 27, 27);
+  /* border: 2px solid rgb(27, 27, 27); */
   padding: 1rem;
 }
 
@@ -56,21 +64,22 @@ body {
 .times-container {
   display: grid;
   gap: 0.2rem;
-  /* max-width: 100px; */
-  margin-left: 1rem;
+  grid-row: 2 / 2;
+  align-self: center;
 }
 
 .time-btn {
   border: 0;
   cursor: pointer;
-  color: black;
-  border: 2px solid rgb(27, 27, 27);
-  background-color: white;
   height: 72px;
   width: 177px;
+  color: var(--bg-light);
+  background-color: var(--accent-gold);
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
 
   &:not(:disabled):hover {
-    background-color: rgb(198, 199, 197);
+    background-color: var(--accent-gold-light);
   }
 }
 
@@ -81,10 +90,11 @@ body {
 /*TIME BUTTONS END*/
 
 .times-container {
-  grid-row: 1 / 1;
+  grid-row: 2 / 2;
   grid-column: 2 / 2;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .timer-count {
@@ -94,28 +104,29 @@ body {
 }
 
 .amount {
-  grid-column: 2/2;
-  font-size: 2rem;
+  grid-column: 3/3;
+  font-size: 1rem;
   padding: 2rem;
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 
 .progress-bar {
   width: 100%;
   margin-top: 1rem;
-  background-color: rgb(192, 192, 192);
+  background-color: var(--bg-section);
   border-radius: 15px;
-  border: 2px solid black;
+  border: 1.5px solid var(--text-heading);
 }
 
 .money {
-  background-color: rgb(51, 204, 21);
+  background-color: var(--clr-gold);
   color: rgb(37, 37, 37);
   padding: 1%;
   text-align: right;
   font-size: 20px;
   border-radius: 15px;
   font-size: 4rem;
+  height: 25px;
 }
 
 .buttons-container {
@@ -132,12 +143,12 @@ body {
   cursor: pointer;
   color: white;
   font-size: 2rem;
-  background-color: white;
-  color: black;
-  border: 2px solid rgb(27, 27, 27);
+  background-color: var(--accent-gold);
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
 
   &:hover {
-    background-color: rgb(221, 221, 221);
+    background-color: var(--accent-gold-light);
   }
 }
 
@@ -161,11 +172,10 @@ body {
 
 .list,
 .list-disabled {
-  /* border: 2px solid rgb(232, 255, 23); */
   display: flex;
   flex-direction: column;
-  /* gap: 0.7rem; */
-  margin-top: 4rem;
+  grid-row: 1;
+
   grid-column: 1;
   padding: 1rem;
 }
@@ -205,17 +215,24 @@ body {
 
 .btn-claim {
   cursor: pointer;
-  /* background-color: rgb(87, 255, 137); */
+
   border: 0;
   padding: 1rem;
-  color: rgb(36, 30, 30);
-  /* border: 1px solid rgb(50, 207, 84); */
-  /* border-radius: 10px; */
+  color: var(--bg-light);
+  background-color: var(--accent-gold);
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
 }
 
 .btn-delete {
-  padding: 1rem;
+  padding: 5px 10px;
   cursor: pointer;
+  border: 0;
+  background-color: transparent;
+
+  &:hover {
+    color: var(--accent-gold-light);
+  }
 }
 
 .reward-text {
@@ -231,7 +248,7 @@ body {
 .pomo-counter {
   padding: 1rem 0 0 1rem;
   grid-column: 3/3;
-  grid-row: 1;
+  grid-row: 2;
   font-size: 2rem;
   color: black;
   border: 2px solid black;
@@ -246,23 +263,30 @@ body {
 }
 
 .form {
-  padding: 1rem;
+  padding: 1rem 0;
   display: flex;
 
   input {
     font-size: 1.2rem;
     padding: 0.5rem;
     width: 100%;
+    border: 1px dashed var(--accent-gold-light);
+    border-radius: 10px;
   }
 
   select {
     padding: 1rem;
     cursor: pointer;
+    background-color: var(--bg-light);
+    border: 1px dashed var(--accent-gold-light);
   }
 
   button {
     padding: 1rem;
     cursor: pointer;
+    background-color: var(--accent-gold-light);
+    border: 1px dashed;
+    color: white;
   }
 }
 .overlay {
