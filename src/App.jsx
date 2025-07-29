@@ -84,7 +84,9 @@ function App() {
   function Header() {
     return (
       <div className="header">
-        <h1>PomoReward</h1>
+        <div className="header-content">
+          <h1>PomoReward</h1>
+        </div>
       </div>
     );
   }
@@ -92,8 +94,8 @@ function App() {
   return (
     <>
       <div className={overlay === true ? "overlay show" : "overlay"}></div>
+      <Header />
       <div className="master-container">
-        <Header />
         <Main>
           <Timer
             timeLeft={timeLeft}
@@ -124,13 +126,9 @@ function App() {
         />
         <PomoCounter counter={counter} />
         <MoneyCounter money={money} />
-        <p className="app-description">
-          Welcome to Pomo Reward, this app follows the Pomodoro Technique.
-          Choose an amount of time that you want to focus for, once you have
-          completed your task you will earn money which you can later spend on
-          rewards of your choosing.
-        </p>
+
         {overlay === true ? <Modal /> : null}
+        <p className="footer-note">Made by Ben Geraghty</p>
       </div>
     </>
   );
