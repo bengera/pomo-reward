@@ -81,10 +81,19 @@ function App() {
     [timeLeft, timerRunning]
   );
 
+  function Header() {
+    return (
+      <div className="header">
+        <h1>PomoReward</h1>
+      </div>
+    );
+  }
+
   return (
     <>
       <div className={overlay === true ? "overlay show" : "overlay"}></div>
       <div className="master-container">
+        <Header />
         <Main>
           <Timer
             timeLeft={timeLeft}
