@@ -84,9 +84,27 @@ function App() {
   function Header() {
     return (
       <div className="header">
-        <div className="header-content">
-          <h1>PomoReward</h1>
+        <div className="header-inner">
+          <div className="header-content">
+            <h1>PomoReward</h1>
+          </div>
+          <div className="social-icons">
+            <img
+              className="icon-github"
+              src="assets/github-mark-white.svg"
+              alt="GitHub"
+            />
+          </div>
         </div>
+      </div>
+    );
+  }
+
+  function Stats({ children }) {
+    return (
+      <div className="stats-container">
+        <h2 className="stats">Stats</h2>
+        {children}
       </div>
     );
   }
@@ -124,8 +142,10 @@ function App() {
           timerRunning={timerRunning}
           setTimerRunning={setTimerRunning}
         />
-        <PomoCounter counter={counter} />
-        <MoneyCounter money={money} />
+        <Stats>
+          <PomoCounter counter={counter} />
+          <MoneyCounter money={money} />
+        </Stats>
 
         {overlay === true ? <Modal /> : null}
         <p className="footer-note">Made by Ben Geraghty</p>

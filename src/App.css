@@ -53,6 +53,7 @@ body {
 }
 
 .header {
+ 
   grid-column: 1/-1;
   grid-row: 1/1;
   background-color: var(--accent-gold);
@@ -66,11 +67,41 @@ body {
   }
 }
 
-.header-content {
+.header-inner {
+   display: flex;
+  justify-content: space-between;
   max-width: 1925px;
   margin: 0 auto;
   padding: 0 1rem;
 }
+
+.header-content {
+  max-width: 1925px;
+    padding: 0 1rem;
+
+  
+}
+
+.icon-github {
+  width: 45px;
+  height: 45px;
+}
+
+.social-icons {
+  align-self: center;
+  padding-right: 5rem;
+}
+
+.icon-github {
+  cursor: pointer;
+  opacity: 0.5;
+  transition: .3s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
 
 .main {
   width: 100%;
@@ -128,8 +159,9 @@ body {
 .amount {
   grid-column: 3/3;
   font-size: 1rem;
-  padding: 2rem;
-  /* border: 2px solid black; */
+  
+  
+ 
 }
 
 .progress-bar {
@@ -274,11 +306,11 @@ body {
 }
 
 .pomo-counter {
-  padding: 1rem 0 0 1rem;
+
   grid-column: 3/3;
   grid-row: 2;
-  font-size: 2rem;
-  color: black;
+  font-size: 1rem;
+  color: var(--accent-gold)
   /* border: 2px solid black; */
   max-width: 75ch;
   word-break: break-word;
@@ -375,4 +407,17 @@ small {
   grid-column: 2/2;
   margin-top: 1rem;
   font-size: 1rem;
+}
+
+.pomo-container {
+  padding: 1rem 0 0 1rem;
+}
+
+.stats {
+  font-size: 2.5rem;
+  
+}
+
+.stats-container {
+  padding: 1rem 0 0 1rem;
 }
