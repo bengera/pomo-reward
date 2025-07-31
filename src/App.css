@@ -65,6 +65,7 @@ body {
     font-size: 5rem;
     font-weight: 800;
     color: white;
+    
   }
 }
 
@@ -79,8 +80,15 @@ body {
 .header-content {
   max-width: 1925px;
     padding: 0 1rem;
+    display: flex;
+    gap: 1rem
 
   
+}
+
+.header-img{
+  width: 80px;
+  height: auto;
 }
 
 .icon-github {

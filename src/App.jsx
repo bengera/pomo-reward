@@ -87,6 +87,7 @@ function App() {
         <div className="header-inner">
           <div className="header-content">
             <h1>PomoReward</h1>
+            <img className="header-img" src="assets/tomato.svg" alt="tomato" />
           </div>
           <div className="social-icons">
             <img
