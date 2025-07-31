@@ -46,7 +46,7 @@ body {
   display: grid;
   max-width: 1925px;
   margin: 0 auto;
-  height: 100vh;
+  /* height: 100vh; */
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: repeat(3, min-content);
   padding: 1rem;
@@ -57,8 +57,9 @@ body {
   grid-column: 1/-1;
   grid-row: 1/1;
   background-color: var(--accent-gold);
-  padding: 1rem;
+  padding: 1rem 1rem;
   width: 100vw;
+
 
   h1 {
     font-size: 5rem;
@@ -162,6 +163,11 @@ body {
   
   
  
+}
+
+.amount-coin-container {
+  display: flex;
+  gap: 5px;
 }
 
 .progress-bar {
@@ -268,7 +274,16 @@ body {
 
 .reward-cost {
   margin: auto;
+  display: flex;
+  gap: 5px;
 }
+
+.reward-coin{
+  width: 20px;
+  height: auto;
+}
+
+
 
 .btn-claim {
   cursor: pointer;
@@ -421,3 +436,4 @@ small {
 .stats-container {
   padding: 1rem 0 0 1rem;
 }
+
