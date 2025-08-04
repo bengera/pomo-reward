@@ -40,53 +40,48 @@ body {
   font-family: sans-serif;
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+h1 {
+  font-size: 5rem;
+  font-weight: 800;
+  color: white;
 }
 
 .master-container {
   display: grid;
   max-width: 1925px;
   margin: 0 auto;
-  /* height: 100vh; */
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: repeat(3, min-content);
   padding: 1rem;
 }
 
 .header {
- 
   grid-column: 1/-1;
   grid-row: 1/1;
   background-color: var(--accent-gold);
   padding: 1rem 1rem;
   width: 100vw;
-
-
-  h1 {
-    font-size: 5rem;
-    font-weight: 800;
-    color: white;
-    
-  }
 }
 
-.header-inner {
-   display: flex;
+.header__inner {
+  display: flex;
   justify-content: space-between;
   max-width: 1925px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-.header-content {
+.header__content {
   max-width: 1925px;
-    padding: 0 1rem;
-    display: flex;
-    gap: 1rem
-
-  
+  padding: 0 1rem;
+  display: flex;
+  gap: 1rem;
 }
 
-.header-img{
+.header__img {
   width: 80px;
   height: auto;
 }
@@ -94,6 +89,13 @@ body {
 .icon-github {
   width: 45px;
   height: 45px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.icon-github:hover {
+  opacity: 1;
 }
 
 .social-icons {
@@ -101,26 +103,12 @@ body {
   padding-right: 5rem;
 }
 
-.icon-github {
-  cursor: pointer;
-  opacity: 0.5;
-  transition: .3s;
-
-  &:hover {
-    opacity: 1;
-  }
-}
-
-
 .main {
   width: 100%;
-
   background-color: white;
   grid-column: 2/2;
   height: 476px;
   grid-row: 1/2;
-
-  /* border: 2px solid rgb(27, 27, 27); */
   padding: 1rem;
 }
 
@@ -168,9 +156,6 @@ body {
 .amount {
   grid-column: 3/3;
   font-size: 1rem;
-  
-  
- 
 }
 
 .amount-coin-container {
@@ -245,79 +230,49 @@ body {
   grid-column: 1;
   grid-row: 1/-1;
   padding: 1rem;
-  
 }
-
-
 
 .list-disabled {
   opacity: 0.5;
   pointer-events: none;
 }
 
-.reward-heading {
+.reward__heading {
   font-size: 2.5rem;
   text-align: center;
 }
 
-.reward-block {
+.reward__block {
   background-color: white;
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 1rem;
   border-bottom: 2px solid rgb(240, 231, 231);
   border-radius: 10px;
-
-  .left-content {
-    display: flex;
-    gap: 1rem;
-  }
-
-  .right-content {
-    display: flex;
-    gap: 1rem;
-  }
 }
 
-.reward-cost {
+.reward__left-content {
+  display: flex;
+  gap: 1rem;
+}
+
+.reward__right-content {
+  display: flex;
+  gap: 1rem;
+}
+
+.reward__cost {
   margin: auto;
   display: flex;
   gap: 5px;
 }
 
-.reward-coin{
+.reward__coin-img {
   width: 20px;
   height: auto;
 }
 
-
-
-.btn-claim {
-  cursor: pointer;
-  border: 0;
-  padding: 0.8rem 0.5rem;
-  color: var(--bg-light);
-  background-color: var(--accent-gold);
-  border: 1px solid var(--border-light);
-  border-radius: 10px;
-
-  &:hover {
-    background-color: var(--accent-gold-light);
-  }
-}
-
-.btn-delete {
-  padding: 5px 10px;
-  cursor: pointer;
-  border: 0;
-  background-color: transparent;
-
-  &:hover {
-    color: var(--accent-gold-light);
-  }
-}
-
-.reward-text {
+.reward__text {
   font-size: 1.2rem;
   align-self: center;
 }
@@ -327,13 +282,35 @@ body {
   height: auto;
 }
 
-.pomo-counter {
+.btn-claim {
+  cursor: pointer;
+  border: 0;
+  padding: 0.8rem 0.5rem;
+  color: var(--bg-light);
+  background-color: var(--accent-gold);
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+}
 
+.btn-claim:hover {
+  background-color: var(--accent-gold-light);
+}
+
+.btn-delete {
+  padding: 5px 10px;
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+}
+
+.btn-delete:hover {
+  color: var(--accent-gold-light);
+}
+
+.pomo-counter {
   grid-column: 3/3;
   grid-row: 2;
   font-size: 1rem;
-  color: var(--accent-gold)
-  /* border: 2px solid black; */
   max-width: 75ch;
   word-break: break-word;
 }
@@ -438,10 +415,8 @@ small {
 
 .stats {
   font-size: 2.5rem;
-  
 }
 
 .stats-container {
   padding: 1rem 0 0 1rem;
 }
-

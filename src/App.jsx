@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Lottie from "lottie-react";
 import animationData from "./success.json";
-import "./App.css";
+import "./styles/App.css";
 import data from "./data.json";
 import quotations from "./quotes.json";
 import { Timer } from "./components/Timer";
@@ -84,10 +84,10 @@ function App() {
   function Header() {
     return (
       <div className="header">
-        <div className="header-inner">
-          <div className="header-content">
+        <div className="header__inner">
+          <div className="header__content">
             <h1>PomoReward</h1>
-            <img className="header-img" src="assets/tomato.svg" alt="tomato" />
+            <img className="header__img" src="assets/tomato.svg" alt="tomato" />
           </div>
           <div className="social-icons">
             <img

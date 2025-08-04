@@ -51,17 +51,21 @@ export function RewardList({
 
   return (
     <div className={!timerRunning && timeLeft === 0 ? "list" : "list-disabled"}>
-      <h2 className="reward-heading">
+      <h2 className="reward__heading">
         {rewards.length > 0 ? "Choose a Reward" : "Add some rewards"}
       </h2>
       {rewards.map((item) => (
-        <div className="reward-block" key={item.id}>
-          <p className="reward-text">{item.description}</p>
-          <div className="left-content">
-            <div className="right-content">
-              <p className="reward-cost">
+        <div className="reward__block" key={item.id}>
+          <p className="reward__text">{item.description}</p>
+          <div className="reward__left-content">
+            <div className="reward__right-content">
+              <p className="reward__cost">
                 {Math.floor(item.price)}
-                <img className="reward-coin" src="assets/coin.svg" alt="coin" />
+                <img
+                  className="reward__coin-img"
+                  src="assets/coin.svg"
+                  alt="coin"
+                />
               </p>
               <button className="btn-claim" onClick={() => handleClaim(item)}>
                 Claim

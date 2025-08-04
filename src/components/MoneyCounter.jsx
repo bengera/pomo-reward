@@ -5,7 +5,7 @@ export function MoneyCounter({ money }) {
         <p className="amount-value">
           {Number.isInteger(money) ? money : money.toFixed(2)}
         </p>{" "}
-        <img className="reward-coin" src="assets/coin.svg" alt="coin" />
+        <img className="reward__coin-img" src="assets/coin.svg" alt="coin" />
       </div>
       <div className="progress-bar">
         <div
