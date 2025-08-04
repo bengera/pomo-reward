@@ -242,13 +242,11 @@ body {
 .list-disabled {
   display: flex;
   flex-direction: column;
-  grid-row: 1;
-
   grid-column: 1;
-  grid-row: 1/1;
+  grid-row: 1/-1;
   padding: 1rem;
-  overflow-y: auto;
-  max-height: 80vh;
+  /* overflow-y: auto;
+  max-height: 80vh; */
 }
 
 .list-disabled {
@@ -342,6 +340,7 @@ body {
 .form {
   padding: 1rem 0;
   display: flex;
+  margin-top: auto;
 
   input {
     font-size: 1.2rem;
