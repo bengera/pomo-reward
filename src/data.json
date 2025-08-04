@@ -16,5 +16,35 @@
     "description": "Play a game for 30 minutes",
     "category": "reward",
     "price": 15
+  },
+  {
+    "id": "a83ef12b-7899-48df-87c2-3c1cfc7e2c5b",
+    "description": "Take a relaxing bath",
+    "category": "reward",
+    "price": 7
+  },
+  {
+    "id": "6b81a2f9-4d99-4c9e-9d16-cf6a2ddf437e",
+    "description": "Buy a fancy coffee",
+    "category": "reward",
+    "price": 6
+  },
+  {
+    "id": "db650b49-f802-40dd-8e88-b0f0b70b6c62",
+    "description": "Sleep in for an extra hour",
+    "category": "reward",
+    "price": 8
+  },
+  {
+    "id": "13be07c0-6140-4903-80a1-3626a79b5dcb",
+    "description": "Go for ice cream",
+    "category": "reward",
+    "price": 9
+  },
+  {
+    "id": "e3f12a80-9dd3-4c3e-92d4-6df0d30b36e4",
+    "description": "Order takeout",
+    "category": "reward",
+    "price": 12
   }
 ]

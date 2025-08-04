@@ -60,7 +60,7 @@ export function RewardList({
           <div className="left-content">
             <div className="right-content">
               <p className="reward-cost">
-                {item.price.toFixed(2)}
+                {Math.floor(item.price)}
                 <img className="reward-coin" src="assets/coin.svg" alt="coin" />
               </p>
               <button className="btn-claim" onClick={() => handleClaim(item)}>
