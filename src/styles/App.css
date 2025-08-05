@@ -58,28 +58,11 @@ h1 {
   padding: 1rem;
 }
 
-.icon-github {
-  width: 45px;
-  height: 45px;
-  cursor: pointer;
-  opacity: 0.5;
-  transition: 0.3s;
-}
-
-.icon-github:hover {
-  opacity: 1;
-}
-
-.social-icons {
-  align-self: center;
-  padding-right: 5rem;
-}
-
 .main {
   width: 100%;
+  height: 100%;
   background-color: white;
   grid-column: 2/2;
-  height: 476px;
   grid-row: 1/2;
   padding: 1rem;
 }
@@ -237,10 +220,34 @@ small {
   padding: 1rem 0 0 1rem;
 }
 
-.footer-note {
-  font-size: 1rem;
-  padding: 1rem 2rem;
+/*CREDIT BOX*/
+.credit {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
   position: absolute;
   bottom: 0;
   right: 0;
+  width: 100vw;
+
+  padding: 0.5rem 1.5rem;
+  background-color: rgb(44, 44, 44);
+}
+
+.footer-note {
+  font-size: 0.8rem;
+  align-self: center;
+  color: var(--bg-light);
+}
+
+.icon-github {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.icon-github:hover {
+  opacity: 1;
 }

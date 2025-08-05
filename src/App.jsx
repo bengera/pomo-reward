@@ -93,13 +93,6 @@ function App() {
             <h1>PomoReward</h1>
             <img className="header__img" src="assets/tomato.svg" alt="tomato" />
           </div>
-          <div className="social-icons">
-            <img
-              className="icon-github"
-              src="assets/github-mark-white.svg"
-              alt="GitHub"
-            />
-          </div>
         </div>
       </div>
     );
@@ -154,7 +147,16 @@ function App() {
 
         {overlay === true ? <Modal /> : null}
       </div>
-      <p className="footer-note">Made by Ben Geraghty</p>
+      <div className="credit">
+        <p className="footer-note">Made by Ben Geraghty</p>
+        <div className="social-icons">
+          <img
+            className="icon-github"
+            src="assets/github-mark-white.svg"
+            alt="GitHub"
+          />
+        </div>
+      </div>
     </>
   );
 }
