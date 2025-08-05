@@ -1,0 +1,38 @@
+.modal-box {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+  padding: 2rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 5%;
+  background-color: white;
+  border: 0;
+  width: 592px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.modal-title {
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.modal-trophy {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.modal-congrats {
+  font-size: 1.5rem;
+}
+
+.btn-modal-close {
+  margin-top: 1rem;
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 10px;
+}

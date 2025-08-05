@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Lottie from "lottie-react";
 import animationData from "./success.json";
-import "./styles/App.css";
 import data from "./data.json";
 import quotations from "./quotes.json";
 import { Timer } from "./components/Timer";
@@ -9,6 +8,9 @@ import { RewardList } from "./components/RewardList";
 import { ChooseTimes } from "./components/ChooseTimes";
 import { PomoCounter } from "./components/PomoCounter";
 import { MoneyCounter } from "./components/MoneyCounter";
+/*CSS */
+import "./styles/App.css";
+import "./styles/modal.css";
 
 function App() {
   const [overlay, setOverlay] = useState(false);

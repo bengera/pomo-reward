@@ -1,7 +1,7 @@
 export function MoneyCounter({ money }) {
   return (
     <div className="amount">
-      <div className="amount-coin-container">
+      <div className="amount__coin-container">
         <p className="amount-value">
           {Number.isInteger(money) ? money : money.toFixed(2)}
         </p>{" "}
