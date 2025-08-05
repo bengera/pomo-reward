@@ -17,6 +17,11 @@ export function RewardList({
 
   function addNewReward(e) {
     e.preventDefault();
+    if (rewards.length > 7) {
+      alert("Rewards list is full");
+      return;
+    }
+
     if (!newReward.trim()) return;
 
     const newItem = {
