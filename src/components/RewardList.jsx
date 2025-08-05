@@ -54,29 +54,6 @@ export function RewardList({
       <h2 className="reward__heading">
         {rewards.length > 0 ? "Choose a Reward" : "Add some rewards"}
       </h2>
-      {rewards.map((item) => (
-        <div className="reward__block" key={item.id}>
-          <p className="reward__text">{item.description}</p>
-          <div className="reward__left-content">
-            <div className="reward__right-content">
-              <p className="reward__cost">
-                {Math.floor(item.price)}
-                <img
-                  className="reward__coin-img"
-                  src="assets/coin.svg"
-                  alt="coin"
-                />
-              </p>
-              <button className="btn-claim" onClick={() => handleClaim(item)}>
-                Claim
-              </button>
-              <button className="btn-delete" onClick={() => handleDelete(item)}>
-                X
-              </button>
-            </div>
-          </div>
-        </div>
-      ))}
       <form className="form" onSubmit={addNewReward}>
         <input
           type="text"
@@ -105,6 +82,29 @@ export function RewardList({
         </select>
         <button>Add</button>
       </form>
+      {rewards.map((item) => (
+        <div className="reward__block" key={item.id}>
+          <p className="reward__text">{item.description}</p>
+          <div className="reward__left-content">
+            <div className="reward__right-content">
+              <p className="reward__cost">
+                {Math.floor(item.price)}
+                <img
+                  className="reward__coin-img"
+                  src="assets/coin.svg"
+                  alt="coin"
+                />
+              </p>
+              <button className="btn-claim" onClick={() => handleClaim(item)}>
+                Claim
+              </button>
+              <button className="btn-delete" onClick={() => handleDelete(item)}>
+                X
+              </button>
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

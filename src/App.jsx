@@ -10,6 +10,8 @@ import { PomoCounter } from "./components/PomoCounter";
 import { MoneyCounter } from "./components/MoneyCounter";
 /*CSS */
 import "./styles/App.css";
+import "./styles/header.css";
+import "./styles/rewards.css";
 import "./styles/modal.css";
 
 function App() {
