@@ -126,6 +126,12 @@ function App() {
             Reset={Reset}
             timerRunning={timerRunning}
           ></Timer>
+          <ChooseTimes
+            setTimeLeft={setTimeLeft}
+            setResetTime={setResetTime}
+            timerRunning={timerRunning}
+            setTimerRunning={setTimerRunning}
+          />
         </Main>
 
         <RewardList
@@ -141,20 +147,14 @@ function App() {
           setSelectedQuote={setSelectedQuote}
         />
 
-        <ChooseTimes
-          setTimeLeft={setTimeLeft}
-          setResetTime={setResetTime}
-          timerRunning={timerRunning}
-          setTimerRunning={setTimerRunning}
-        />
         <Stats>
           <PomoCounter counter={counter} />
           <MoneyCounter money={money} />
         </Stats>
 
         {overlay === true ? <Modal /> : null}
-        <p className="footer-note">Made by Ben Geraghty</p>
       </div>
+      <p className="footer-note">Made by Ben Geraghty</p>
     </>
   );
 }
