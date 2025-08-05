@@ -148,7 +148,10 @@ h1 {
 /*TIME BUTTONS END*/
 
 .timer-count {
+  font-variant-numeric: tabular-nums;
+  font-family: arial;
   font-size: 8rem;
+
   text-align: center;
   padding-top: 1.5rem;
 }
