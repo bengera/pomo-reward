@@ -5,6 +5,7 @@ export function RewardList({
   setRewards,
   money,
   setMoney,
+  setRewardsCounter,
   timerRunning,
   timeLeft,
   setOverlay,
@@ -36,6 +37,7 @@ export function RewardList({
 
   function handleClaim(itemToClaim) {
     if (money < itemToClaim.price) return;
+    setRewardsCounter((prev) => prev + 1);
     setOverlay(true);
     setCurrentClaim(itemToClaim);
     const updatedArr = rewards.filter((item) => item.id !== itemToClaim.id);

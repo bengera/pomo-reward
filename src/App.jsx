@@ -8,6 +8,7 @@ import { RewardList } from "./components/RewardList";
 import { ChooseTimes } from "./components/ChooseTimes";
 import { PomoCounter } from "./components/PomoCounter";
 import { MoneyCounter } from "./components/MoneyCounter";
+import { RewardCounter } from "./components/RewardsCounter";
 /*CSS */
 import "./styles/App.css";
 import "./styles/header.css";
@@ -17,6 +18,7 @@ import "./styles/modal.css";
 function App() {
   const [overlay, setOverlay] = useState(false);
   const [rewards, setRewards] = useState(data);
+  const [rewardsCounter, setRewardsCounter] = useState(0);
   const [timeLeft, setTimeLeft] = useState(0);
   const [timerRunning, setTimerRunning] = useState(false);
   const [resetTime, setResetTime] = useState(0);
@@ -98,7 +100,7 @@ function App() {
     );
   }
 
-  function Stats({ children }) {
+  function Progress({ children }) {
     return (
       <div className="stats-container">
         <h2 className="stats">Stats</h2>
@@ -132,6 +134,7 @@ function App() {
           setRewards={setRewards}
           money={money}
           setMoney={setMoney}
+          setRewardsCounter={setRewardsCounter}
           timerRunning={timerRunning}
           timeLeft={timeLeft}
           setOverlay={setOverlay}
@@ -140,10 +143,11 @@ function App() {
           setSelectedQuote={setSelectedQuote}
         />
 
-        <Stats>
+        <Progress>
           <PomoCounter counter={counter} />
+          <RewardCounter rewardsCounter={rewardsCounter} />
           <MoneyCounter money={money} />
-        </Stats>
+        </Progress>
 
         {overlay === true ? <Modal /> : null}
       </div>
