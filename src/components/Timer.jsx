@@ -5,18 +5,22 @@ export function Timer({ timeLeft, timerRunning, setTimerRunning, Reset }) {
         {Math.floor(timeLeft / 60)}:{String(timeLeft % 60).padStart(2, "0")}
       </p>
       <div className="buttons-container">
-        <button
-          onClick={() => setTimerRunning(true)}
-          className="btn-control start"
-        >
-          Start
-        </button>
-        <button
-          onClick={() => setTimerRunning(false)}
-          className="btn-control stop"
-        >
-          Stop
-        </button>
+        {!timerRunning ? (
+          <button
+            onClick={() => setTimerRunning(true)}
+            className="btn-control start"
+          >
+            Start
+          </button>
+        ) : (
+          <button
+            onClick={() => setTimerRunning(false)}
+            className="btn-control stop"
+          >
+            Stop
+          </button>
+        )}
+
         <button onClick={() => Reset()} className="btn-control reset">
           Reset
         </button>
