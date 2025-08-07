@@ -17,7 +17,10 @@ import "./styles/modal.css";
 
 function App() {
   const [overlay, setOverlay] = useState(false);
-  const [rewards, setRewards] = useState(data);
+  const [rewards, setRewards] = useState(function () {
+    const storedReward = localStorage.getItem("rewards");
+    return JSON.parse(storedReward);
+  });
   const [rewardsCounter, setRewardsCounter] = useState(0);
   const [timeLeft, setTimeLeft] = useState(0);
   const [timerRunning, setTimerRunning] = useState(false);
@@ -57,6 +60,13 @@ function App() {
       </div>
     );
   }
+
+  useEffect(
+    function () {
+      localStorage.setItem("rewards", JSON.stringify(rewards));
+    },
+    [rewards]
+  );
 
   useEffect(
     function () {
