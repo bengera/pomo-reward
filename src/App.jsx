@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Lottie from "lottie-react";
 import animationData from "./success.json";
-import data from "./data.json";
+// import data from "./data.json";
 import quotations from "./quotes.json";
 import { Timer } from "./components/Timer";
 import { RewardList } from "./components/RewardList";
@@ -19,7 +19,7 @@ function App() {
   const [overlay, setOverlay] = useState(false);
   const [rewards, setRewards] = useState(function () {
     const storedReward = localStorage.getItem("rewards");
-    return JSON.parse(storedReward);
+    return storedReward ? JSON.parse(storedReward) : [];
   });
   const [rewardsCounter, setRewardsCounter] = useState(0);
   const [timeLeft, setTimeLeft] = useState(0);
@@ -114,6 +114,9 @@ function App() {
     return (
       <div className="stats-container">
         <h2 className="stats">Stats</h2>
+        <p style={{ textDecoration: "underline", marginBottom: "10px" }}>
+          Stats only count for this session
+        </p>
         {children}
       </div>
     );
