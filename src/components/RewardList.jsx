@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRef } from "react";
 
 export function RewardList({
   rewards,
@@ -15,6 +16,21 @@ export function RewardList({
 }) {
   const [newReward, setNewReward] = useState("");
   const [amount, setAmount] = useState("5");
+  const inputReward = useRef(null);
+
+  useEffect(function () {
+    function callback(e) {
+      if (e.code === "Enter") {
+        console.log("Enter key pressed");
+        inputReward.current.focus();
+      } else if (e.code === "Escape") {
+        inputReward.current.blur();
+      }
+    }
+
+    document.addEventListener("keydown", callback);
+    return () => document.removeEventListener("keydown", callback);
+  }, []);
 
   function addNewReward(e) {
     e.preventDefault();
@@ -45,7 +61,6 @@ export function RewardList({
     setMoney((prev) => prev - itemToClaim.price);
     const randomQuote = Math.floor(Math.random() * allQuotes.length);
     console.log(randomQuote);
-
     setSelectedQuote(allQuotes[randomQuote]);
   }
 
@@ -67,6 +82,7 @@ export function RewardList({
           placeholder="Enter reward"
           value={newReward}
           onChange={(e) => setNewReward(e.target.value)}
+          ref={inputReward}
         />
         <select
           value={amount}
