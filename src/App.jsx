@@ -85,16 +85,20 @@ function App() {
 
   useEffect(
     function () {
-      if (!timerRunning || timeLeft === 0) return;
+      if (!timerRunning) return;
       const interval = setInterval(() => {
-        setTimeLeft((prev) => prev - 1);
+        setTimeLeft((prev) => {
+          if (prev <= 1) {
+            clearInterval(interval);
+            return 0;
+          }
+          return prev - 1;
+        });
       }, 1000);
 
-      return function () {
-        clearInterval(interval);
-      };
+      return () => clearInterval(interval);
     },
-    [timeLeft, timerRunning]
+    [timerRunning]
   );
 
   function Header() {

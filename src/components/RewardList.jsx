@@ -18,19 +18,23 @@ export function RewardList({
   const [amount, setAmount] = useState("5");
   const inputReward = useRef(null);
 
-  useEffect(function () {
-    function callback(e) {
-      if (e.code === "Enter") {
-        console.log("Enter key pressed");
-        inputReward.current.focus();
-      } else if (e.code === "Escape") {
-        inputReward.current.blur();
+  useEffect(
+    function () {
+      function callback(e) {
+        if (timerRunning) return;
+        if (e.code === "Enter") {
+          console.log("Enter key pressed");
+          inputReward.current?.focus();
+        } else if (e.code === "Escape") {
+          inputReward.current?.blur();
+        }
       }
-    }
 
-    document.addEventListener("keydown", callback);
-    return () => document.removeEventListener("keydown", callback);
-  }, []);
+      document.addEventListener("keydown", callback);
+      return () => document.removeEventListener("keydown", callback);
+    },
+    [timerRunning]
+  );
 
   function addNewReward(e) {
     e.preventDefault();
@@ -78,6 +82,7 @@ export function RewardList({
       </h2>
       <form className="form" onSubmit={addNewReward}>
         <input
+          id="input-reward"
           type="text"
           placeholder="Enter reward"
           value={newReward}
