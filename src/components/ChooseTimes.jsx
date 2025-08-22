@@ -7,7 +7,8 @@ export function ChooseTimes({ setTimeLeft, setResetTime, timerRunning }) {
   }
 
   const times = [
-    "00:03",
+    // "00:03", // only for testing
+    "2:00",
     "5:00",
     "10:00",
     "15:00",

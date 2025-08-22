@@ -3,6 +3,7 @@ import Lottie from "lottie-react";
 import animationData from "./success.json";
 // import data from "./data.json";
 import quotations from "./quotes.json";
+import { Header } from "./components/Header";
 import { Timer } from "./components/Timer";
 import { RewardList } from "./components/RewardList";
 import { ChooseTimes } from "./components/ChooseTimes";
@@ -26,7 +27,7 @@ function App() {
   const [timerRunning, setTimerRunning] = useState(false);
   const [resetTime, setResetTime] = useState(0);
   const [counter, setCounter] = useState(0);
-  const [money, setMoney] = useState(100);
+  const [money, setMoney] = useState(0);
   const [currentClaim, setCurrentClaim] = useState("");
   const [allQuotes] = useState(quotations);
   const [selectedQuote, setSelectedQuote] = useState("");
@@ -100,19 +101,6 @@ function App() {
     },
     [timerRunning]
   );
-
-  function Header() {
-    return (
-      <div className="header">
-        <div className="header__inner">
-          <div className="header__content">
-            <h1>PomoReward</h1>
-            <img className="header__img" src="assets/tomato.svg" alt="tomato" />
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   function Progress({ children }) {
     return (

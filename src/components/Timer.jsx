@@ -4,6 +4,7 @@ export function Timer({ timeLeft, timerRunning, setTimerRunning, Reset }) {
       <p className="timer-count">
         {Math.floor(timeLeft / 60)}:{String(timeLeft % 60).padStart(2, "0")}
       </p>
+
       <div className="buttons-container">
         {!timerRunning ? (
           <button
