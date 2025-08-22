@@ -46,7 +46,7 @@ export function RewardList({
     if (!newReward.trim()) return;
 
     const newItem = {
-      id: Date.now(),
+      id: crypto.randomUUID(),
       description: newReward,
       category: "reward",
       price: Number(amount),

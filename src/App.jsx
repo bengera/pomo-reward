@@ -1,8 +1,5 @@
 import { useEffect, useState } from "react";
-import Lottie from "lottie-react";
-import animationData from "./success.json";
-// import data from "./data.json";
-import quotations from "./quotes.json";
+
 import { Header } from "./components/Header";
 import { Timer } from "./components/Timer";
 import { RewardList } from "./components/RewardList";
@@ -11,6 +8,9 @@ import { PomoCounter } from "./components/PomoCounter";
 import { MoneyCounter } from "./components/MoneyCounter";
 import { RewardCounter } from "./components/RewardsCounter";
 import { Progress } from "./components/Progress";
+import { Credit } from "./components/Credit";
+import { Modal } from "./components/Modal";
+import quotations from "./quotes.json";
 /*CSS */
 import "./styles/App.css";
 import "./styles/header.css";
@@ -28,7 +28,7 @@ function App() {
   const [timerRunning, setTimerRunning] = useState(false);
   const [resetTime, setResetTime] = useState(0);
   const [counter, setCounter] = useState(0);
-  const [money, setMoney] = useState(0);
+  const [money, setMoney] = useState(100);
   const [currentClaim, setCurrentClaim] = useState("");
   const [allQuotes] = useState(quotations);
   const [selectedQuote, setSelectedQuote] = useState("");
@@ -41,26 +41,6 @@ function App() {
     console.log("Resetting Timer");
     setTimerRunning(false);
     setTimeLeft(resetTime);
-  }
-
-  function Modal() {
-    return (
-      <div className="modal-box">
-        <p className="modal-title">{currentClaim.description}</p>
-        <Lottie
-          animationData={animationData}
-          loop={false}
-          autoplay={true}
-          style={{ width: 400, height: 400 }}
-        />
-        <h2 className="modal-congrats">"{selectedQuote.quote}"</h2>
-        <small>{selectedQuote.author}</small>
-
-        <button className="btn-modal-close" onClick={() => setOverlay(false)}>
-          Close
-        </button>
-      </div>
-    );
   }
 
   useEffect(
@@ -143,18 +123,15 @@ function App() {
           <MoneyCounter money={money} />
         </Progress>
 
-        {overlay === true ? <Modal /> : null}
-      </div>
-      <div className="credit">
-        <p className="footer-note">Made by Ben Geraghty</p>
-        <div className="social-icons">
-          <img
-            className="icon-github"
-            src="assets/github-mark-white.svg"
-            alt="GitHub"
+        {overlay === true ? (
+          <Modal
+            currentClaim={currentClaim}
+            selectedQuote={selectedQuote}
+            setOverlay={setOverlay}
           />
-        </div>
+        ) : null}
       </div>
+      <Credit />
     </>
   );
 }
