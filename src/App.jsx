@@ -28,7 +28,7 @@ function App() {
   const [timerRunning, setTimerRunning] = useState(false);
   const [resetTime, setResetTime] = useState(0);
   const [counter, setCounter] = useState(0);
-  const [money, setMoney] = useState(100);
+  const [money, setMoney] = useState(0);
   const [currentClaim, setCurrentClaim] = useState("");
   const [allQuotes] = useState(quotations);
   const [selectedQuote, setSelectedQuote] = useState("");
