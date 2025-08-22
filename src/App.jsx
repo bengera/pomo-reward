@@ -10,6 +10,7 @@ import { ChooseTimes } from "./components/ChooseTimes";
 import { PomoCounter } from "./components/PomoCounter";
 import { MoneyCounter } from "./components/MoneyCounter";
 import { RewardCounter } from "./components/RewardsCounter";
+import { Progress } from "./components/Progress";
 /*CSS */
 import "./styles/App.css";
 import "./styles/header.css";
@@ -101,18 +102,6 @@ function App() {
     },
     [timerRunning]
   );
-
-  function Progress({ children }) {
-    return (
-      <div className="stats-container">
-        <h2 className="stats">Stats</h2>
-        <p style={{ textDecoration: "underline", marginBottom: "10px" }}>
-          Counters only count for this session
-        </p>
-        {children}
-      </div>
-    );
-  }
 
   return (
     <>
