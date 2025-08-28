@@ -12,10 +12,10 @@ import { Credit } from "./components/Credit";
 import { Modal } from "./components/Modal";
 import quotations from "./quotes.json";
 /*CSS */
-import "./styles/App.css";
-import "./styles/header.css";
-import "./styles/rewards.css";
-import "./styles/modal.css";
+import "./sass/app.scss";
+import "./sass/header.scss";
+import "./sass/rewards.scss";
+import "./sass/modal.scss";
 
 function App() {
   const [overlay, setOverlay] = useState(false);
