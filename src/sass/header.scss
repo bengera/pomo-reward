@@ -4,22 +4,37 @@
   background-color: var(--accent-gold);
   padding: 1rem 1rem;
   width: 100vw;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1925px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  &__content {
+    max-width: 1925px;
+    padding: 0 1rem;
+    display: flex;
+    gap: 1rem;
+  }
 }
 
-.header__inner {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1925px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
+// .header__inner {
+//   display: flex;
+//   justify-content: space-between;
+//   max-width: 1925px;
+//   margin: 0 auto;
+//   padding: 0 1rem;
+// }
 
-.header__content {
-  max-width: 1925px;
-  padding: 0 1rem;
-  display: flex;
-  gap: 1rem;
-}
+// .header__content {
+//   max-width: 1925px;
+//   padding: 0 1rem;
+//   display: flex;
+//   gap: 1rem;
+// }
 
 .header__img {
   width: 80px;
