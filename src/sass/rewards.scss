@@ -18,11 +18,11 @@
 }
 
 .reward__block {
-  background-color: white;
+  background-color: transparent;
   display: flex;
   justify-content: space-between;
   padding: 0.4rem 1rem;
-  border-bottom: 2px solid rgb(240, 231, 231);
+  border: 1px dashed black;
   border-radius: 10px;
 }
 

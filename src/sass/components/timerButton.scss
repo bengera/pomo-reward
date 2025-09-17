@@ -18,13 +18,15 @@
   cursor: pointer;
   height: 72px;
   width: 177px;
-  color: var(--bg-light);
-  background-color: var(--accent-gold);
-  border: 1px solid var(--border-light);
+  color: #333;
+  border: 2px dotted #333;
   border-radius: 10px;
+  background-color: transparent;
+  color: white;
 
   &:not(:disabled):hover {
-    background-color: var(--accent-gold-light);
+    background-color: #333;
+    color: white;
   }
 }
 
