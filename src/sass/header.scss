@@ -4,3 +4,10 @@
   padding: 1rem;
   color: $color-cod-gray;
 }
+
+.header {
+  &__description {
+    text-align: center;
+    color: $color-ebony-clay;
+  }
+}
