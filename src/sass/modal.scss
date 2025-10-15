@@ -1,3 +1,4 @@
+@use "./abstracts/" as *;
 .modal-box {
   position: absolute;
   display: flex;
@@ -8,10 +9,9 @@
   left: 50%;
   transform: translate(-50%, 0);
   top: 5%;
-  background-color: white;
-  border: 0;
+  background-color: $color-white;
   width: 592px;
-  border-radius: 10px;
+  border-radius: 5px;
   text-align: center;
 }
 
@@ -35,4 +35,11 @@
   cursor: pointer;
   background-color: transparent;
   border-radius: 10px;
+  border: 1px solid $color-cod-gray;
+
+  &:hover {
+    background-color: $color-white;
+    color: $color-bank-green;
+    border: 1px solid $color-bank-green;
+  }
 }
