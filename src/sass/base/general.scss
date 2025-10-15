@@ -29,6 +29,12 @@ body {
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
   overflow-y: hidden;
+
+  background-image: url("/assets/pattern-randomized.svg");
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-position: center;
+  min-height: 100vh;
 }
 
 h1 {
