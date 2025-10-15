@@ -1,3 +1,4 @@
+@use "./abstracts/index" as *;
 .list,
 .list-disabled {
   display: flex;
@@ -22,8 +23,13 @@
   display: flex;
   justify-content: space-between;
   padding: 0.4rem 1rem;
-  border: 1px dashed black;
-  border-radius: 10px;
+  border: 1px solid #d1cfcf;
+  border-radius: 0;
+  border-bottom: 0;
+}
+
+.reward__block:last-of-type {
+  border-bottom: 1px solid #d1cfcf;
 }
 
 .reward__left-content {
@@ -60,22 +66,26 @@
 .btn-claim {
   cursor: pointer;
   border: 0;
-  padding: 0.8rem 0.5rem;
-  color: var(--bg-light);
-  background-color: var(--accent-gold);
-  border: 1px solid var(--border-light);
-  border-radius: 10px;
+  padding: 0.8rem 1.5rem;
+  color: $color-cod-gray;
+  background-color: $color-bank-green;
+  border: 1px solid var(red);
+  border-radius: 5px;
+  color: $color-white;
+  border: 1px solid $color-bank-green;
 }
 
 .btn-claim:hover {
-  background-color: var(--accent-gold-light);
+  background-color: $color-white;
+  color: $color-bank-green-hover;
+  border: 1px solid $color-bank-green-hover;
 }
 
 .btn-delete {
   padding: 5px 10px;
   cursor: pointer;
   border: 0;
-  background-color: transparent;
+  background-color: transparent; // add trash icon
 }
 
 .btn-delete:hover {
@@ -90,22 +100,21 @@
     font-size: 1.2rem;
     padding: 0.5rem;
     width: 100%;
-    border: 1px dashed var(--accent-gold-light);
-    border-radius: 10px;
+    border: 1px dashed var(red);
   }
 
   select {
     padding: 1rem;
     cursor: pointer;
     background-color: var(--bg-light);
-    border: 1px dashed var(--accent-gold-light);
+    border: 1px $color-shuttle-gray;
   }
 
   button {
     padding: 1rem;
     cursor: pointer;
-    background-color: var(--accent-gold);
-    border: 1px dashed;
+    background-color: $color-bank-green;
+    border: 0;
     color: white;
   }
 }

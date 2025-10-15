@@ -1,4 +1,6 @@
+@use "./abstracts/" as *;
 .hero-heading {
   text-align: center;
   padding: 1rem;
+  color: $color-cod-gray;
 }

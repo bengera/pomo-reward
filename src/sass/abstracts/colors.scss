@@ -1,11 +1,24 @@
-:root {
-  --bg-light: #fff8e6;
-  --bg-section: #fdf0d1;
-  --text-heading: #2e1f11;
-  --text-body: #5b4632;
-  --accent-gold: #d6a84a;
-  --accent-gold-light: #ebcb72;
-  --button-active: #e4bd71;
-  --icon-gold: #c7a156;
-  --border-light: #f0e3c1;
-}
+// :root {
+//   --bg-light: #fff8e6;
+//   --bg-section: #fdf0d1;
+//   --text-heading: #2e1f11;
+//   --text-body: #5b4632;
+//   // --accent-gold: #d6a84a;
+//   --accent-gold: #edcb4b;
+//   --accent-gold-light: #ebcb72;
+//   --button-active: #e4bd71;
+//   --icon-gold: #c7a156;
+//   --border-light: #f0e3c1;
+// }
+
+$color-beaver: hsl(27, 22%, 51%);
+$color-cod-gray: hsl(0, 0%, 7%);
+$color-white: #fff;
+$color-grey: #d1cfcf;
+
+$color-mirage: hsl(234, 30%, 13%);
+$color-ebony-clay: hsl(218, 21%, 18%);
+$color-shuttle-gray: hsl(217, 14%, 42%);
+$color-error-red: #f05b5b;
+$color-bank-green: #54bc73;
+$color-bank-green-hover: #62da86;
