@@ -38,18 +38,16 @@
 .progress-bar {
   width: 100%;
   margin-top: 1rem;
-  background-color: var(--bg-section);
+  background-color: $color-grey;
   border-radius: 15px;
-  border: 1.5px solid var(--button-active);
+  border: 1.5px $color-cod-gray;
 }
 
 .money {
-  background-color: var(--clr-gold);
-  color: rgb(37, 37, 37);
   padding: 1%;
   text-align: right;
   font-size: 20px;
-  border-radius: 15px;
+  border-radius: 5px;
   font-size: 4rem;
   height: 25px;
 }
@@ -62,18 +60,19 @@
 }
 
 .btn-control {
-  padding: 1rem 2rem;
+  padding: 0.6rem 4rem;
   border: 0;
   cursor: pointer;
   color: white;
-  font-size: 2rem;
+  font-size: 1rem;
   color: $color-white;
   background-color: $color-bank-green;
-  border: 1px dashed #333;
-  border-radius: 10px;
+  border: 1px solid $color-bank-green;
+  border-radius: 5px;
 
   &:hover {
-    background-color: $color-grey;
+    background-color: $color-white;
+    color: $color-bank-green;
   }
 }
 

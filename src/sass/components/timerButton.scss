@@ -1,5 +1,5 @@
 @use "../abstracts/" as *;
-/*TIME BUTTONS START*/
+
 .times-container {
   display: grid;
   gap: 0.2rem;
@@ -34,4 +34,3 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
-/*TIME BUTTONS END*/

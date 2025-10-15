@@ -11,14 +11,14 @@ export function Timer({ timeLeft, timerRunning, setTimerRunning, Reset }) {
             onClick={() => setTimerRunning(true)}
             className="btn-control start"
           >
-            Start
+            Start timer
           </button>
         ) : (
           <button
             onClick={() => setTimerRunning(false)}
             className="btn-control stop"
           >
-            Stop
+            Stop timer
           </button>
         )}
 

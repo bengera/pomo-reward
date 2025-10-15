@@ -12,7 +12,7 @@ export function MoneyCounter({ money }) {
           className="money"
           style={{
             width: `${money}%`,
-            backgroundColor: money === 0 ? "transparent" : "var(--accent-gold)",
+            backgroundColor: money === 0 ? "transparent" : "#54bc73",
           }}
         ></div>
       </div>
