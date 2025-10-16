@@ -1,4 +1,5 @@
 @use "./abstracts/" as *;
+@use "./utilities/" as *;
 .modal-box {
   position: absolute;
   display: flex;
@@ -36,6 +37,7 @@
   background-color: transparent;
   border-radius: 10px;
   border: 1px solid $color-cod-gray;
+  @include transition;
 
   &:hover {
     background-color: $color-white;

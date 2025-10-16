@@ -30,8 +30,8 @@ function App() {
   const [counter, setCounter] = useState(0);
   const [money, setMoney] = useState(100);
   const [currentClaim, setCurrentClaim] = useState("");
-  const [allQuotes] = useState(quotations);
   const [selectedQuote, setSelectedQuote] = useState("");
+  const allQuotes = quotations;
 
   function Main({ children }) {
     return <main className="main">{children}</main>;

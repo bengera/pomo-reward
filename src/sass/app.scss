@@ -1,4 +1,6 @@
 @use "../sass/abstracts" as *;
+@use "./utilities/" as *;
+
 .master-container {
   display: grid;
   max-width: 120.313rem;
@@ -69,6 +71,12 @@
   background-color: $color-bank-green;
   border: 1px solid $color-bank-green;
   border-radius: 5px;
+  filter: drop-shadow(-2px 6px 0px #49a263);
+  @include transition;
+
+  &:active {
+    transform: scale(0.95);
+  }
 
   &:hover {
     background-color: $color-white;
