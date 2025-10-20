@@ -89,25 +89,27 @@ export function RewardList({
           onChange={(e) => setNewReward(e.target.value)}
           ref={inputReward}
         />
-        <select
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-          name="cost"
-          id="cost-dropdown"
-        >
-          <option value="5" className="value">
-            $5.00
-          </option>
-          <option value="10" className="value">
-            $10.00
-          </option>
-          <option value="15" className="value">
-            $15.00
-          </option>
-          <option value="20" className="value">
-            $20.00
-          </option>
-        </select>
+        <div className="custom-select">
+          <select
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+            name="cost"
+            id="cost-dropdown"
+          >
+            <option value="5" className="value">
+              $5.00
+            </option>
+            <option value="10" className="value">
+              $10.00
+            </option>
+            <option value="15" className="value">
+              $15.00
+            </option>
+            <option value="20" className="value">
+              $20.00
+            </option>
+          </select>
+        </div>
         <button>Add</button>
       </form>
       {rewards.map((item) => (

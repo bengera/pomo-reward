@@ -29,12 +29,12 @@ body {
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
   overflow-y: hidden;
-
   background-image: url("/assets/abstract-timekeeper.svg");
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // background-position: center;
   min-height: 100vh;
+
+  @media only screen and (max-width: $bp-tablet) {
+    overflow-y: unset;
+  }
 }
 
 h1 {
