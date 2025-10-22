@@ -93,6 +93,12 @@
   background-color: $color-white;
   color: $color-bank-green-hover;
   border: 1px solid $color-bank-green-hover;
+
+  @media only screen and (max-width: $bp-tablet) {
+    background-color: $color-bank-green;
+    border: 1px solid $color-bank-green;
+    color: $color-white;
+  }
 }
 
 .btn-delete {
