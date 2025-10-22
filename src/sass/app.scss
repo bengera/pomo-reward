@@ -44,6 +44,11 @@
 .amount__coin-container {
   display: flex;
   gap: 5px;
+
+  @media only screen and (max-width: $bp-tablet) {
+    align-self: center;
+    justify-content: center;
+  }
 }
 
 .progress-bar {
@@ -53,6 +58,10 @@
   border-radius: 5px;
   padding: 2px;
   border: 1px $color-cod-gray;
+
+  @media only screen and (max-width: $bp-tablet) {
+    width: 90vw;
+  }
 }
 
 .money {
@@ -149,6 +158,12 @@ small {
 
 .stats-container {
   padding: 1rem 0 0 1rem;
+
+  @media only screen and (max-width: $bp-tablet) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /*CREDIT BOX*/

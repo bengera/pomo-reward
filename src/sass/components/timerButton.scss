@@ -33,6 +33,16 @@
       border: 1px solid $color-bank-green;
     }
   }
+
+  &:not(:disabled):hover {
+    @media only screen and (max-width: $bp-tablet) {
+      &:hover {
+        background-color: $color-white;
+        color: $color-cod-gray;
+        border: 1px solid $color-grey;
+      }
+    }
+  }
 }
 
 .time-btn:disabled {
