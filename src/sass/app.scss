@@ -88,10 +88,10 @@
     transform: scale(0.95);
   }
 
-  &:hover {
-    background-color: $color-white;
-    color: $color-bank-green;
-  }
+  // &:hover {
+  //   background-color: $color-white;
+  //   color: $color-bank-green;
+  // }
 }
 
 .btn-control.stop {
@@ -101,9 +101,9 @@
 
   &__hover {
     background-color: $color-error-red;
+    color: $color-white;
   }
 }
-
 .message-box {
   text-align: center;
   margin-top: 1rem;

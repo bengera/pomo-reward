@@ -12,7 +12,7 @@ export function ChooseTimes({ setTimeLeft, setResetTime, timerRunning }) {
     "5:00",
     "10:00",
     "15:00",
-    "25:00",
+    "20:00",
     "30:00",
     "60:00",
     "80:00",
