@@ -76,7 +76,7 @@ export function RewardList({
   }
 
   return (
-    <div className={!timerRunning && timeLeft === 0 ? "list" : "list-disabled"}>
+    <div className={!timerRunning || timeLeft === 0 ? "list" : "list-disabled"}>
       <h2 className="reward__heading">
         {rewards.length > 0 ? "Choose a Reward" : "Add some rewards"}
       </h2>
