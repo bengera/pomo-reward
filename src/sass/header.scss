@@ -9,5 +9,10 @@
   &__description {
     text-align: center;
     color: $color-ebony-clay;
+
+    @media only screen and (max-width: $bp-tablet) {
+      font-size: clamp(10px, 5vw, 20px);
+      padding: 0 2rem;
+    }
   }
 }
