@@ -104,6 +104,7 @@
 
 .custom-select {
   border: 1px solid $color-grey;
+  appearance: none;
 
   @media only screen and (max-width: $bp-mobile) {
     display: flex;
