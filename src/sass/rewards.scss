@@ -170,3 +170,13 @@
     color: white;
   }
 }
+
+.modal-box > div:nth-child(2) > svg:nth-child(1) {
+  width: 400px;
+  height: 400px;
+
+  @media only screen and (max-width: $bp-mobile) {
+    width: auto;
+    height: auto;
+  }
+}

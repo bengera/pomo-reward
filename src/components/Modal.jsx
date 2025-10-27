@@ -9,7 +9,7 @@ export function Modal({ currentClaim, selectedQuote, setOverlay }) {
         animationData={animationData}
         loop={false}
         autoplay={true}
-        style={{ width: 400, height: 400 }}
+        // style={{ width: 400, height: 400 }}
       />
       <h2 className="modal-congrats">"{selectedQuote.quote}"</h2>
       <small>{selectedQuote.author}</small>
