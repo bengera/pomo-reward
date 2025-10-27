@@ -13,7 +13,8 @@
   }
 
   @media only screen and (max-width: $bp-mobile) {
-    max-width: 436px;
+    max-width: 404px;
+    margin: 0 auto;
     padding: 0;
   }
 }
