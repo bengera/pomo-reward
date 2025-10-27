@@ -104,6 +104,12 @@
 
 .custom-select {
   border: 1px solid $color-grey;
+
+  @media only screen and (max-width: $bp-mobile) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .btn-claim:hover {
