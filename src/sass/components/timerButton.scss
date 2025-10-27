@@ -12,6 +12,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
+  @media only screen and (max-width: $bp-mobile) {
+    flex-direction: column;
+  }
 }
 
 .time-btn {
@@ -47,6 +51,11 @@
   @media only screen and (max-width: $bp-tablet) {
     height: 88px;
     width: 129px;
+  }
+
+  @media only screen and (max-width: $bp-mobile) {
+    height: 56px;
+    width: 100%;
   }
 }
 

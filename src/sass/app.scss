@@ -13,6 +13,11 @@
     display: flex;
     flex-direction: column;
   }
+
+  // @media only screen and (max-width: $bp-mobile) {
+  //   padding: 2rem;
+  //   max-width: 26.3rem;
+  // }
 }
 
 .main {
@@ -25,12 +30,18 @@
   @media only screen and (max-width: $bp-tablet) {
     height: auto;
   }
+
+  @media only screen and (max-width: $bp-mobile) {
+    padding: 2rem;
+    max-width: 26.3rem;
+    margin: 0 auto;
+  }
 }
 
 .timer-count {
   font-variant-numeric: tabular-nums;
   font-family: arial;
-  font-size: clamp(7rem, 15vw, 15rem);
+  font-size: clamp(8rem, 15vw, 15rem);
   font-weight: bold;
   text-align: center;
   padding-top: 1.5rem;
@@ -78,6 +89,11 @@
   justify-content: center;
   margin-top: 1rem;
   gap: 2rem;
+
+  @media only screen and (max-width: $bp-mobile) {
+    gap: 1rem;
+    flex-direction: column;
+  }
 }
 
 .btn-control {
@@ -96,11 +112,6 @@
   &:active {
     transform: scale(0.95);
   }
-
-  // &:hover {
-  //   background-color: $color-white;
-  //   color: $color-bank-green;
-  // }
 }
 
 .btn-control.stop {
