@@ -16,6 +16,8 @@ _A minimalist Pomodoro timer with rewards and animations._
 
 ---
 
+![](https://github.com/bengera/pomo-reward/blob/master/screenshot-desktop.png?raw=true)
+
 ## Why?
 
 I wanted a Pomodoro app that:
