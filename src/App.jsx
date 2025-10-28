@@ -24,11 +24,11 @@ function App() {
     return storedReward ? JSON.parse(storedReward) : [];
   });
   const [rewardsCounter, setRewardsCounter] = useState(0);
-  const [timeLeft, setTimeLeft] = useState(0);
+  const [timeLeft, setTimeLeft] = useState(1500);
   const [timerRunning, setTimerRunning] = useState(false);
   const [resetTime, setResetTime] = useState(0);
   const [counter, setCounter] = useState(0);
-  const [money, setMoney] = useState(100);
+  const [money, setMoney] = useState(35);
   const [currentClaim, setCurrentClaim] = useState("");
   const [selectedQuote, setSelectedQuote] = useState("");
   const allQuotes = quotations;

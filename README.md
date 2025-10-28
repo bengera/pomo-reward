@@ -4,6 +4,8 @@ _A minimalist Pomodoro timer with rewards and animations._
 
 ---
 
+![App Demo](preview.gif)
+
 ## Contents
 
 - [Why?](#why)
@@ -15,8 +17,6 @@ _A minimalist Pomodoro timer with rewards and animations._
 - [Roadmap](#roadmap)
 
 ---
-
-![](https://github.com/bengera/pomo-reward/blob/master/screenshot-desktop.png?raw=true)
 
 ## Why?
 
